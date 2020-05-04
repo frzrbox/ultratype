@@ -4,7 +4,11 @@ Dynamic typography for the web
 
 ## Api
 
-[Text Split](https://github.com/frzrbox/ultratype#text-split) - [By Word](https://github.com/frzrbox/ultratype/blob/master/README.md#by-word) - [By Letter](https://github.com/frzrbox/ultratype/blob/master/README.md#by-letter)
+[Text Split](https://github.com/frzrbox/ultratype#text-split)</br>
+
+- [By Word](https://github.com/frzrbox/ultratype#by-word)</br>
+
+- [By Letter](https://github.com/frzrbox/ultratype#by-letter)
 
 ## Text Split
 
