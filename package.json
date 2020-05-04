@@ -7,8 +7,9 @@
 		"lib"
 	],
 	"scripts": {
-		"docs": "parcel docs/index.html",
-		"build-docs": "parcel build docs/index.html"
+		"dev": "parcel docs/index.html",
+		"build-docs": "parcel build docs/index.html",
+		"build-lib": "parcel build src/index.js -d lib/ultratype"
 	},
 	"keywords": [
 		"typography",
