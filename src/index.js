@@ -1,12 +1,11 @@
-class CreateTextSplit {
+export class CreateTextSplit {
     constructor() {
         this.element;
         this.className;
         this.activeClass;
     }
 
-    config(options) {
-        const { el, activeClass } = options;
+    config({ el, activeClass = 'active' }) {
         this.element = el;
         this.activeClass = activeClass;
     }
@@ -19,54 +18,59 @@ class CreateTextSplit {
         this.element.classList.remove(this.activeClass);
     }
 
-    splitByWord({ stagger, ease = 'ease', className }) {
+    handleSplit(arr, className, stagger) {
+        arr.map((el) => {
+            if (el === ' ') {
+                el = '&nbsp;'
+            }
+            this.element.innerHTML += `<span class=${className}>${el}</span>`
+        })
+
+        // Add the delays to the children of the arr
+        const children = this.element.querySelectorAll(`.${className}`);
+
+        children.forEach((child, index) => {
+            let itemStagger = stagger * index;
+
+            child.style.cssText = `
+                    transition-delay: ${itemStagger}s;
+                    animation-delay: ${itemStagger}s;
+                    display: inline-block;
+                `
+        })
+    }
+
+    splitByLetter({ stagger, className }) {
         if (this.element) {
             const letters = this.element.innerText.split('');
+            // Clear the element
             this.element.innerHTML = ''
 
-            letters.map((letter) => {
-                if (letter === ' ') {
-                    letter = '&nbsp;'
-                }
-                this.element.innerHTML += `<span class=${className}>${letter}</span>`
+            this.handleSplit(letters, className, stagger)
+
+        } else {
+            console.error('NO ELEMENT FOUND: Add one using the config method')
+        }
+    }
+
+    splitByWord({ stagger, className }) {
+        if (this.element) {
+            const words = this.element.innerText.split(' ');
+            // Clear the element
+            this.element.innerHTML = ''
+
+            // Handle the spaces between the words by add nbsp;
+            let newWordsArr = [];
+
+            words.map(word => {
+                newWordsArr.push(word);
+                newWordsArr.push('&nbsp;')
             })
 
-            const children = this.element.querySelectorAll(`.${className}`);
+            this.handleSplit(newWordsArr, className, stagger)
 
-            children.forEach((child, index) => {
-                let itemStagger = stagger * index;
-
-                child.style.cssText = `
-                        transition-delay: ${itemStagger}s;
-                        animation-delay: ${itemStagger}s;
-                        display: inline-block;
-                    `
-            })
         } else {
             console.error('NO ELEMENT FOUND: Add one using the config method')
         }
     }
 }
-
-const element = document.querySelector('.element')
-const addBtn = document.querySelector('.add-btn')
-const removeBtn = document.querySelector('.remove-btn')
-const item = new CreateTextSplit()
-
-item.config({
-    el: element,
-    activeClass: 'active'
-});
-
-item.splitByWord({
-    stagger: 0.1,
-    className: 'cool'
-})
-
-addBtn.addEventListener('click', () => {
-    item.applyActiveClass()
-})
-
-removeBtn.addEventListener('click', () => {
-    item.removeActiveClass()
-})
