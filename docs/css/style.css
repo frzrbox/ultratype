@@ -1,11 +1,39 @@
-.cool {
+:root {
+	--transition-out: all 0.2s ease-out;
+	--transition-in: all 0.2s ease-in;
+}
+
+#hero {
+	height: 100vh;
+	width: 100%;
+	display: grid;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.letter {
 	opacity: 0;
 	transform: translateX(10px);
-	transition: all 0.2s ease-out;
-	font-size: 3rem;
+	transition: var(--transition-out);
+	font-size: 10rem;
 }
-.element.active .cool {
+.by-letter.active .letter {
 	opacity: 1;
 	transform: translateX(0px);
-	transition: all 0.2s ease-out;
+	transition: var(--transition-in);
+}
+
+.word {
+	font-size: 4rem;
+	opacity: 0;
+	transform: translateY(10px);
+	transition: var(--transition-out);
+}
+
+.by-word.active .word {
+	opacity: 1;
+	transform: translateY(0px);
+	transition: var(--transition-in);
 }

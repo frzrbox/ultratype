@@ -1,22 +1,40 @@
-const element = document.querySelector('.element')
+import { CreateTextSplit } from '../../src/index'
+
+const byLetter = document.querySelector('.by-letter')
+const byWord = document.querySelector('.by-word')
 const addBtn = document.querySelector('.add-btn')
 const removeBtn = document.querySelector('.remove-btn')
-const item = new CreateTextSplit()
+const letters = new CreateTextSplit()
+const words = new CreateTextSplit()
 
-item.config({
-    el: element,
+letters.config({
+    el: byLetter,
     activeClass: 'active'
 });
 
-item.splitByWord({
-    stagger: 0.1,
-    className: 'cool'
+letters.splitByLetter({
+    stagger: 0.05,
+    className: 'letter'
 })
 
+words.config({
+    el: byWord,
+    activeClass: 'active'
+})
+
+words.splitByWord({
+    stagger: 0.05,
+    className: "word"
+})
+
+
+
 addBtn.addEventListener('click', () => {
-    item.applyActiveClass()
+    letters.applyActiveClass()
+    words.applyActiveClass()
 })
 
 removeBtn.addEventListener('click', () => {
-    item.removeActiveClass()
+    letters.removeActiveClass()
+    words.removeActiveClass()
 })

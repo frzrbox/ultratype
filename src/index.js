@@ -1,4 +1,4 @@
-class CreateTextSplit {
+export class CreateTextSplit {
     constructor() {
         this.element;
         this.className;
@@ -44,13 +44,34 @@ class CreateTextSplit {
         })
     }
 
-    splitByWord({ stagger, className }) {
+    splitByLetter({ stagger, className }) {
         if (this.element) {
             const letters = this.element.innerText.split('');
             // Clear the element
             this.element.innerHTML = ''
 
             this.handleSplit(letters, className, stagger)
+
+        } else {
+            console.error('NO ELEMENT FOUND: Add one using the config method')
+        }
+    }
+
+    splitByWord({ stagger, className }) {
+        if (this.element) {
+            const words = this.element.innerText.split(' ');
+            // Clear the element
+            this.element.innerHTML = ''
+
+            // Handle the spaces between the words by add nbsp;
+            let newWordsArr = [];
+
+            words.map(word => {
+                newWordsArr.push(word);
+                newWordsArr.push('&nbsp;')
+            })
+
+            this.handleSplit(newWordsArr, className, stagger)
 
         } else {
             console.error('NO ELEMENT FOUND: Add one using the config method')

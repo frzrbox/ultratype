@@ -117,26 +117,147 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/scripts.js":[function(require,module,exports) {
-var element = document.querySelector('.element');
+})({"../src/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.CreateTextSplit = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var CreateTextSplit = /*#__PURE__*/function () {
+  function CreateTextSplit() {
+    _classCallCheck(this, CreateTextSplit);
+
+    this.element;
+    this.className;
+    this.activeClass;
+  }
+
+  _createClass(CreateTextSplit, [{
+    key: "config",
+    value: function config(options) {
+      if (options.el) {
+        this.element = options.el;
+      }
+
+      if (options.activeClass) {
+        this.activeClass = options.activeClass;
+      }
+    }
+  }, {
+    key: "applyActiveClass",
+    value: function applyActiveClass() {
+      this.element.classList.add(this.activeClass);
+    }
+  }, {
+    key: "removeActiveClass",
+    value: function removeActiveClass() {
+      this.element.classList.remove(this.activeClass);
+    }
+  }, {
+    key: "handleSplit",
+    value: function handleSplit(arr, className, stagger) {
+      var _this = this;
+
+      arr.map(function (el) {
+        if (el === ' ') {
+          el = '&nbsp;';
+        }
+
+        _this.element.innerHTML += "<span class=".concat(className, ">").concat(el, "</span>");
+      }); // Add the delays to the children of the arr
+
+      var children = this.element.querySelectorAll(".".concat(className));
+      children.forEach(function (child, index) {
+        var itemStagger = stagger * index;
+        child.style.cssText = "\n                    transition-delay: ".concat(itemStagger, "s;\n                    animation-delay: ").concat(itemStagger, "s;\n                    display: inline-block;\n                ");
+      });
+    }
+  }, {
+    key: "splitByLetter",
+    value: function splitByLetter(_ref) {
+      var stagger = _ref.stagger,
+          className = _ref.className;
+
+      if (this.element) {
+        var letters = this.element.innerText.split(''); // Clear the element
+
+        this.element.innerHTML = '';
+        this.handleSplit(letters, className, stagger);
+      } else {
+        console.error('NO ELEMENT FOUND: Add one using the config method');
+      }
+    }
+  }, {
+    key: "splitByWord",
+    value: function splitByWord(_ref2) {
+      var stagger = _ref2.stagger,
+          className = _ref2.className;
+
+      if (this.element) {
+        var words = this.element.innerText.split(' '); // Clear the element
+
+        this.element.innerHTML = ''; // Handle the spaces between the words by add nbsp;
+
+        var newWordsArr = [];
+        words.map(function (word) {
+          newWordsArr.push(word);
+          newWordsArr.push('&nbsp;');
+        });
+        this.handleSplit(newWordsArr, className, stagger);
+      } else {
+        console.error('NO ELEMENT FOUND: Add one using the config method');
+      }
+    }
+  }]);
+
+  return CreateTextSplit;
+}();
+
+exports.CreateTextSplit = CreateTextSplit;
+},{}],"js/scripts.js":[function(require,module,exports) {
+"use strict";
+
+var _index = require("../../src/index");
+
+var byLetter = document.querySelector('.by-letter');
+var byWord = document.querySelector('.by-word');
 var addBtn = document.querySelector('.add-btn');
 var removeBtn = document.querySelector('.remove-btn');
-var item = new CreateTextSplit();
-item.config({
-  el: element,
+var letters = new _index.CreateTextSplit();
+var words = new _index.CreateTextSplit();
+letters.config({
+  el: byLetter,
   activeClass: 'active'
 });
-item.splitByWord({
-  stagger: 0.1,
-  className: 'cool'
+letters.splitByLetter({
+  stagger: 0.05,
+  className: 'letter'
+});
+words.config({
+  el: byWord,
+  activeClass: 'active'
+});
+words.splitByWord({
+  stagger: 0.05,
+  className: "word"
 });
 addBtn.addEventListener('click', function () {
-  item.applyActiveClass();
+  letters.applyActiveClass();
+  words.applyActiveClass();
 });
 removeBtn.addEventListener('click', function () {
-  item.removeActiveClass();
+  letters.removeActiveClass();
+  words.removeActiveClass();
 });
-},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../../src/index":"../src/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -164,7 +285,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61309" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61734" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
