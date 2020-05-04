@@ -4,7 +4,7 @@ Dynamic typography for the web
 
 # Api
 
-[Text Split](https://github.com/frzrbox/ultratype#textsplit)
+[Text Split](https://github.com/frzrbox/ultratype#text-split)
 
 # Text Split
 
