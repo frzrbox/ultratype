@@ -1,0 +1,21 @@
+{
+	"name": "ultratype",
+	"version": "0.0.1",
+	"description": "Dynamic typography for the web",
+	"main": "lib/ultratype.js",
+	"files": [
+		"lib"
+	],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"typography",
+		"animation",
+		"scroll",
+		"javascript",
+		"css"
+	],
+	"author": "frzrbox",
+	"license": "MIT"
+}

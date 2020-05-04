@@ -1,0 +1,10 @@
+.cool {
+	opacity: 0;
+	transform: translateY(10px);
+	transition: all 0.2s ease-out;
+}
+.element.active .cool {
+	opacity: 1;
+	transform: translateY(0px);
+	transition: all 0.2s ease-out;
+}
