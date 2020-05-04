@@ -1,0 +1,14 @@
+.cool {
+	opacity: 0;
+	transform: translateX(10px);
+	transition: all 0.2s ease-out;
+	font-size: 3rem;
+}
+.element.active .cool {
+	opacity: 1;
+	transform: translateX(0px);
+	transition: all 0.2s ease-out;
+}
+
+
+/*# sourceMappingURL=/style.78032849.css.map */

@@ -1,10 +1,11 @@
 .cool {
 	opacity: 0;
-	transform: translateY(10px);
+	transform: translateX(10px);
 	transition: all 0.2s ease-out;
+	font-size: 3rem;
 }
 .element.active .cool {
 	opacity: 1;
-	transform: translateY(0px);
+	transform: translateX(0px);
 	transition: all 0.2s ease-out;
 }

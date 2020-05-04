@@ -7,7 +7,8 @@
 		"lib"
 	],
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"docs": "parcel docs/index.html",
+		"build-docs": "parcel build docs/index.html"
 	},
 	"keywords": [
 		"typography",
@@ -17,5 +18,8 @@
 		"css"
 	],
 	"author": "frzrbox",
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {
+		"parcel-bundler": "^1.12.4"
+	}
 }
