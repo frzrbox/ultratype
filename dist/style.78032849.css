@@ -30,19 +30,27 @@ ul {
 	padding: 0;
 }
 
+h1 {
+	margin: 0;
+}
+
 body {
 	background: var(--color-background-light);
 }
 
 a {
 	text-decoration: none;
+	color: var(--color-dark-text);
+}
+
+a:hover {
+	text-decoration: line-through;
 }
 
 button {
 	position: relative;
 	border: 1px solid var(--color-dark-accent);
 	padding: 15px 20px;
-	text-transform: uppercase;
 	overflow: hidden;
 	z-index: 10;
 }
@@ -68,6 +76,25 @@ button:hover::before {
 	transition: var(--transition-in);
 }
 
+header {
+	position: fixed;
+	background: var(--color-background-light);
+	z-index: 999;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px 20px;
+	border-bottom: 2.5px solid var(--color-dark-accent);
+}
+
+nav {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 10px;
+	place-items: center;
+}
+
 #hero {
 	height: 100vh;
 	width: 100%;
@@ -84,9 +111,12 @@ button:hover::before {
 	position: absolute;
 	bottom: 50px;
 	right: 50px;
-	width: 275px;
 	display: flex;
 	justify-content: space-between;
+}
+
+.add-btn {
+	border-right: none;
 }
 
 .letter {
@@ -116,6 +146,21 @@ button:hover::before {
 	opacity: 1;
 	transform: translateY(0px);
 	transition: var(--transition-in);
+}
+
+@keyframes appearFromRight {
+	from {
+		opacity: 0;
+		transform: translateX(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+#full {
+	height: 100vh;
 }
 
 
