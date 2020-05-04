@@ -2,6 +2,8 @@
 
 Dynamic typography for the web
 
+⚠️⚠️ Still A Work In Progress Dont Use In Production ⚠️⚠️
+
 ## Api
 
 [Text Split](https://github.com/frzrbox/ultratype#text-split)
