@@ -3,6 +3,26 @@
 	--transition-in: all 0.2s ease-in;
 }
 
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
 #hero {
 	height: 100vh;
 	width: 100%;
@@ -11,6 +31,13 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+}
+
+#hero .buttons {
+	position: absolute;
+	top: 20px;
+	right: 20px;
 }
 
 .letter {

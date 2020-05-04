@@ -28,7 +28,6 @@ words.splitByWord({
 })
 
 
-
 addBtn.addEventListener('click', () => {
     letters.applyActiveClass()
     words.applyActiveClass()
