@@ -5,13 +5,9 @@ export class CreateTextSplit {
         this.activeClass;
     }
 
-    config(options) {
-        if (options.el) {
-            this.element = options.el;
-        }
-        if (options.activeClass) {
-            this.activeClass = options.activeClass;
-        }
+    config({ el, activeClass = 'active' }) {
+        this.element = el;
+        this.activeClass = activeClass;
     }
 
     applyActiveClass() {

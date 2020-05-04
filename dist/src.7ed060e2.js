@@ -142,14 +142,12 @@ var CreateTextSplit = /*#__PURE__*/function () {
 
   _createClass(CreateTextSplit, [{
     key: "config",
-    value: function config(options) {
-      if (options.el) {
-        this.element = options.el;
-      }
-
-      if (options.activeClass) {
-        this.activeClass = options.activeClass;
-      }
+    value: function config(_ref) {
+      var el = _ref.el,
+          _ref$activeClass = _ref.activeClass,
+          activeClass = _ref$activeClass === void 0 ? 'active' : _ref$activeClass;
+      this.element = el;
+      this.activeClass = activeClass;
     }
   }, {
     key: "applyActiveClass",
@@ -182,9 +180,9 @@ var CreateTextSplit = /*#__PURE__*/function () {
     }
   }, {
     key: "splitByLetter",
-    value: function splitByLetter(_ref) {
-      var stagger = _ref.stagger,
-          className = _ref.className;
+    value: function splitByLetter(_ref2) {
+      var stagger = _ref2.stagger,
+          className = _ref2.className;
 
       if (this.element) {
         var letters = this.element.innerText.split(''); // Clear the element
@@ -197,9 +195,9 @@ var CreateTextSplit = /*#__PURE__*/function () {
     }
   }, {
     key: "splitByWord",
-    value: function splitByWord(_ref2) {
-      var stagger = _ref2.stagger,
-          className = _ref2.className;
+    value: function splitByWord(_ref3) {
+      var stagger = _ref3.stagger,
+          className = _ref3.className;
 
       if (this.element) {
         var words = this.element.innerText.split(' '); // Clear the element

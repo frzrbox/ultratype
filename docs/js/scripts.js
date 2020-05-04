@@ -18,8 +18,7 @@ letters.splitByLetter({
 })
 
 words.config({
-    el: byWord,
-    activeClass: 'active'
+    el: byWord
 })
 
 words.splitByWord({

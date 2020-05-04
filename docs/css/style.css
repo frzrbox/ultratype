@@ -1,4 +1,14 @@
 :root {
+	/* Typography  */
+	--special-accent-font: "Varela", sans-serif;
+	--default-font: "Oxygen", sans-serif;
+	/* Colors  */
+	--color-primary-accent: #feca57;
+	--color-dark-accent: #222f3e;
+	--color-light-text: #f5f6fa;
+	--color-background-light: #f5f6fa;
+	--color-dark-text: black;
+	/* Easing */
 	--transition-out: all 0.2s ease-out;
 	--transition-in: all 0.2s ease-in;
 }
@@ -11,6 +21,7 @@ html {
 *::before,
 *::after {
 	box-sizing: inherit;
+	font-family: var(--default-font);
 }
 
 body,
@@ -19,8 +30,42 @@ ul {
 	padding: 0;
 }
 
+body {
+	background: var(--color-background-light);
+}
+
 a {
 	text-decoration: none;
+}
+
+button {
+	position: relative;
+	border: 1px solid var(--color-dark-accent);
+	padding: 15px 20px;
+	text-transform: uppercase;
+	overflow: hidden;
+	z-index: 10;
+}
+
+button:before {
+	position: absolute;
+	z-index: -1;
+	content: "";
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: var(--color-dark-accent);
+	opacity: 0;
+	transition: var(--transition-out);
+}
+
+button:hover {
+	color: white;
+}
+button:hover::before {
+	opacity: 1;
+	transition: var(--transition-in);
 }
 
 #hero {
@@ -32,19 +77,25 @@ a {
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	background: var(--color-primary-accent);
 }
 
 #hero .buttons {
 	position: absolute;
-	top: 20px;
-	right: 20px;
+	bottom: 50px;
+	right: 50px;
+	width: 275px;
+	display: flex;
+	justify-content: space-between;
 }
 
 .letter {
 	opacity: 0;
+	color: var(--color-dark-accent);
 	transform: translateX(10px);
 	transition: var(--transition-out);
 	font-size: 10rem;
+	font-family: var(--special-accent-font);
 }
 .by-letter.active .letter {
 	opacity: 1;
@@ -53,7 +104,9 @@ a {
 }
 
 .word {
+	color: var(--color-light-text);
 	font-size: 4rem;
+	font-weight: 400;
 	opacity: 0;
 	transform: translateY(10px);
 	transition: var(--transition-out);
