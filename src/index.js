@@ -40,7 +40,7 @@ export class CreateTextSplit {
         })
     }
 
-    splitByLetter({ stagger, className }) {
+    splitByLetter({ stagger = 0.1, className = 'item' }) {
         if (this.element) {
             const letters = this.element.innerText.split('');
             // Clear the element
@@ -53,7 +53,7 @@ export class CreateTextSplit {
         }
     }
 
-    splitByWord({ stagger, className }) {
+    splitByWord({ stagger = 0.1, className = 'item' }) {
         if (this.element) {
             const words = this.element.innerText.split(' ');
             // Clear the element

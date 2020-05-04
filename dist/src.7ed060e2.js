@@ -181,8 +181,10 @@ var CreateTextSplit = /*#__PURE__*/function () {
   }, {
     key: "splitByLetter",
     value: function splitByLetter(_ref2) {
-      var stagger = _ref2.stagger,
-          className = _ref2.className;
+      var _ref2$stagger = _ref2.stagger,
+          stagger = _ref2$stagger === void 0 ? 0.1 : _ref2$stagger,
+          _ref2$className = _ref2.className,
+          className = _ref2$className === void 0 ? 'item' : _ref2$className;
 
       if (this.element) {
         var letters = this.element.innerText.split(''); // Clear the element
@@ -196,8 +198,10 @@ var CreateTextSplit = /*#__PURE__*/function () {
   }, {
     key: "splitByWord",
     value: function splitByWord(_ref3) {
-      var stagger = _ref3.stagger,
-          className = _ref3.className;
+      var _ref3$stagger = _ref3.stagger,
+          stagger = _ref3$stagger === void 0 ? 0.1 : _ref3$stagger,
+          _ref3$className = _ref3.className,
+          className = _ref3$className === void 0 ? 'item' : _ref3$className;
 
       if (this.element) {
         var words = this.element.innerText.split(' '); // Clear the element
@@ -248,7 +252,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61734" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54237" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
