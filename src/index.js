@@ -1,13 +1,22 @@
-function handleSplit(arr, className, stagger, parent) {
+function handleSplit(arr, className, stagger, parent, text) {
+    // Set the aria label for accessiblity
+    parent.setAttribute('aria-label', text)
+
+    const ariaContainer = document.createElement('span');
+    ariaContainer.setAttribute('aria-hidden', true);
+
+
     arr.map((el) => {
         if (el === ' ') {
             el = '&nbsp;'
         }
-        parent.innerHTML += `<span class=${className}>${el}</span>`
+        ariaContainer.innerHTML += `<span class=${className}>${el}</span>`
     })
 
+    parent.appendChild(ariaContainer)
+
     // Add the delays to the children of the arr
-    const children = parent.querySelectorAll(`.${className}`);
+    const children = ariaContainer.querySelectorAll(`.${className}`);
 
     children.forEach((child, index) => {
         let itemStagger = stagger * index;
@@ -26,6 +35,8 @@ const ultratype = ({ el, activeClass = 'active' }) => {
             let className = params.className
             let stagger = params.stagger
 
+            const elContent = el.innerText
+
             const words = el.innerText.split(' ');
             // Clear the element
             el.innerHTML = ''
@@ -37,18 +48,20 @@ const ultratype = ({ el, activeClass = 'active' }) => {
                 newWordsArr.push(word);
                 newWordsArr.push('&nbsp;')
             });
-            return handleSplit(newWordsArr, className, stagger, el)
+            return handleSplit(newWordsArr, className, stagger, el, elContent)
 
         },
         splitByLetter(params = { stagger: 0.1, className: "letter" }) {
             let className = params.className
             let stagger = params.stagger
 
+            const elContent = el.innerText
+
             const letters = el.innerText.split('');
             // Clear the element
             el.innerHTML = '';
 
-            handleSplit(letters, className, stagger, el);
+            handleSplit(letters, className, stagger, el, elContent);
         },
         applyActiveClass() {
             el.classList.add(activeClass);
