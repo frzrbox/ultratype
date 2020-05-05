@@ -190,15 +190,23 @@ var _index = _interopRequireDefault(require("../../src/index"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var heroText = document.querySelector('.hero-text');
 var byLetter = document.querySelector('.by-letter');
 var byWord = document.querySelector('.by-word');
 var addBtn = document.querySelector('.add-btn');
 var removeBtn = document.querySelector('.remove-btn');
+var hero = (0, _index.default)({
+  el: heroText
+});
 var letters = (0, _index.default)({
   el: byLetter
 });
 var words = (0, _index.default)({
   el: byWord
+});
+hero.splitByLetter({
+  className: 'text-element',
+  stagger: 0.15
 });
 letters.splitByLetter();
 words.splitByWord();
@@ -238,7 +246,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49667" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53430" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
