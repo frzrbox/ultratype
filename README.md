@@ -85,3 +85,29 @@ toggleButton.addEventListener("click", () => letters.toggleActiveClass());
 	transition: var(--transition-in);
 }
 ```
+
+### Accessibility
+
+Ultratype automatically converts the split text into accessible html
+
+**Input**
+
+```html
+<h1>Yooo I have clout</h1>
+```
+
+**Output**
+
+```html
+<h1 aria-label="Yooo I have clout">
+	<span aria-hidden="true">
+		<span>Yooo</span>
+		<span> </span>
+		<span>I</span>
+		<span> </span>
+		<span>have</span>
+		<span> </span>
+		<span>clout</span>
+	</span>
+</h1>
+```
