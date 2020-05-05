@@ -118,112 +118,71 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"../src/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.CreateTextSplit = void 0;
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var CreateTextSplit = /*#__PURE__*/function () {
-  function CreateTextSplit() {
-    _classCallCheck(this, CreateTextSplit);
-
-    this.element;
-    this.className;
-    this.activeClass;
-  }
-
-  _createClass(CreateTextSplit, [{
-    key: "config",
-    value: function config(_ref) {
-      var el = _ref.el,
-          _ref$activeClass = _ref.activeClass,
-          activeClass = _ref$activeClass === void 0 ? 'active' : _ref$activeClass;
-      this.element = el;
-      this.activeClass = activeClass;
+function handleSplit(arr, className, stagger, parent) {
+  arr.map(function (el) {
+    if (el === ' ') {
+      el = '&nbsp;';
     }
-  }, {
-    key: "applyActiveClass",
-    value: function applyActiveClass() {
-      this.element.classList.add(this.activeClass);
-    }
-  }, {
-    key: "removeActiveClass",
-    value: function removeActiveClass() {
-      this.element.classList.remove(this.activeClass);
-    }
-  }, {
-    key: "handleSplit",
-    value: function handleSplit(arr, className, stagger) {
-      var _this = this;
 
-      arr.map(function (el) {
-        if (el === ' ') {
-          el = '&nbsp;';
-        }
+    parent.innerHTML += "<span class=".concat(className, ">").concat(el, "</span>");
+  }); // Add the delays to the children of the arr
 
-        _this.element.innerHTML += "<span class=".concat(className, ">").concat(el, "</span>");
-      }); // Add the delays to the children of the arr
+  var children = parent.querySelectorAll(".".concat(className));
+  children.forEach(function (child, index) {
+    var itemStagger = stagger * index;
+    child.style.cssText = "\n                        transition-delay: ".concat(itemStagger, "s;\n                        animation-delay: ").concat(itemStagger, "s;\n                        display: inline-block;\n                    ");
+  });
+}
 
-      var children = this.element.querySelectorAll(".".concat(className));
-      children.forEach(function (child, index) {
-        var itemStagger = stagger * index;
-        child.style.cssText = "\n                    transition-delay: ".concat(itemStagger, "s;\n                    animation-delay: ").concat(itemStagger, "s;\n                    display: inline-block;\n                ");
+var ultratype = function ultratype(_ref) {
+  var el = _ref.el,
+      _ref$activeClass = _ref.activeClass,
+      activeClass = _ref$activeClass === void 0 ? 'active' : _ref$activeClass;
+  var textSplit = {
+    splitByWord: function splitByWord() {
+      var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+        stagger: 0.1,
+        className: "word"
+      };
+      var className = params.className;
+      var stagger = params.stagger;
+      var words = el.innerText.split(' '); // Clear the element
+
+      el.innerHTML = ''; // Handle the spaces between the words by add nbsp;
+
+      var newWordsArr = [];
+      words.map(function (word) {
+        newWordsArr.push(word);
+        newWordsArr.push('&nbsp;');
       });
+      return handleSplit(newWordsArr, className, stagger, el);
+    },
+    splitByLetter: function splitByLetter() {
+      var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+        stagger: 0.1,
+        className: "letter"
+      };
+      var className = params.className;
+      var stagger = params.stagger;
+      var letters = el.innerText.split(''); // Clear the element
+
+      el.innerHTML = '';
+      handleSplit(letters, className, stagger, el);
+    },
+    applyActiveClass: function applyActiveClass() {
+      el.classList.add(activeClass);
+    },
+    removeActiveClass: function removeActiveClass() {
+      el.classList.remove(activeClass);
+    },
+    toggleActiveClass: function toggleActiveClass() {
+      el.classList.toggle(activeClass);
     }
-  }, {
-    key: "splitByLetter",
-    value: function splitByLetter(_ref2) {
-      var _ref2$stagger = _ref2.stagger,
-          stagger = _ref2$stagger === void 0 ? 0.1 : _ref2$stagger,
-          _ref2$className = _ref2.className,
-          className = _ref2$className === void 0 ? 'item' : _ref2$className;
+  };
+  return textSplit;
+};
 
-      if (this.element) {
-        var letters = this.element.innerText.split(''); // Clear the element
-
-        this.element.innerHTML = '';
-        this.handleSplit(letters, className, stagger);
-      } else {
-        console.error('NO ELEMENT FOUND: Add one using the config method');
-      }
-    }
-  }, {
-    key: "splitByWord",
-    value: function splitByWord(_ref3) {
-      var _ref3$stagger = _ref3.stagger,
-          stagger = _ref3$stagger === void 0 ? 0.1 : _ref3$stagger,
-          _ref3$className = _ref3.className,
-          className = _ref3$className === void 0 ? 'item' : _ref3$className;
-
-      if (this.element) {
-        var words = this.element.innerText.split(' '); // Clear the element
-
-        this.element.innerHTML = ''; // Handle the spaces between the words by add nbsp;
-
-        var newWordsArr = [];
-        words.map(function (word) {
-          newWordsArr.push(word);
-          newWordsArr.push('&nbsp;');
-        });
-        this.handleSplit(newWordsArr, className, stagger);
-      } else {
-        console.error('NO ELEMENT FOUND: Add one using the config method');
-      }
-    }
-  }]);
-
-  return CreateTextSplit;
-}();
-
-exports.CreateTextSplit = CreateTextSplit;
+module.exports = ultratype;
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -252,7 +211,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54237" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49667" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

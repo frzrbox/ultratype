@@ -14,10 +14,12 @@ Split and animate text in an accessible way
 
 **Methods**
 
-| Name              | Description                     | Props                     |
-| ----------------- | ------------------------------- | ------------------------- |
-| config            | setup the base                  | el: required, activeClass |
-| applyActiveClass  | add activeClass to element      | none                      |
-| removeActiveClass | remove activeClass from element | none                      |
-| splitByLetter     | splits an element by letter     | stagger, className        |
-| splitByWord       | splits and element by word      | stagger, className        |
+| Name              | Description                     | Props              |
+| ----------------- | ------------------------------- | ------------------ |
+| splitByLetter     | splits an element by letter     | stagger, className |
+| splitByWord       | splits and element by word      | stagger, className |
+| applyActiveClass  | add activeClass to element      | none               |
+| removeActiveClass | remove activeClass from element | none               |
+| toggleActiveClass | toggles activeClass on element  | none               |
+
+**Usage**
