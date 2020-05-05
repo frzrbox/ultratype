@@ -208,7 +208,7 @@ addBtn.addEventListener('click', function () {
 });
 removeBtn.addEventListener('click', function () {
   letters.removeActiveClass();
-  words.removeActiveClass();
+  words.removeActiveClass().addActiveClass();
 });
 },{"../../src/index":"../src/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
