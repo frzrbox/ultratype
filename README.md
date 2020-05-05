@@ -56,15 +56,15 @@ Split and animate text in an accessible way
 ```
 
 ```js
-import ultratype from 'ultratype/lib';
+import ultratype from "ultratype/lib";
 
-const toogleButton = document.querySelector('.toggleText');
-const byLetter = document.querySelector('.by-letter);
+const toogleButton = document.querySelector(".toggleText");
+const byLetter = document.querySelector(".by-letter");
 
-const letters = ultratype({el: byLetter});
+const letters = ultratype({ el: byLetter });
 letters.splitByLetter();
 
-toggleButton.addEventListener('click', () => letters.toggleActiveClass())
+toggleButton.addEventListener("click", () => letters.toggleActiveClass());
 ```
 
 ```css
