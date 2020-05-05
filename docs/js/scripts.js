@@ -18,5 +18,5 @@ addBtn.addEventListener('click', () => {
 
 removeBtn.addEventListener('click', () => {
     letters.removeActiveClass()
-    words.removeActiveClass()
+    words.removeActiveClass().addActiveClass()
 })
