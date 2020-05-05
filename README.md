@@ -2,7 +2,7 @@
 
 Dynamic typography for the web
 
-⚠️⚠️ Still A Work In Progress Dont Use In Production ⚠️⚠️
+`npm i ultratype`
 
 ## Api
 
