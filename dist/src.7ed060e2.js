@@ -118,16 +118,21 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"../src/index.js":[function(require,module,exports) {
-function handleSplit(arr, className, stagger, parent) {
+function handleSplit(arr, className, stagger, parent, text) {
+  // Set the aria label for accessiblity
+  parent.setAttribute('aria-label', text);
+  var ariaContainer = document.createElement('span');
+  ariaContainer.setAttribute('aria-hidden', true);
   arr.map(function (el) {
     if (el === ' ') {
       el = '&nbsp;';
     }
 
-    parent.innerHTML += "<span class=".concat(className, ">").concat(el, "</span>");
-  }); // Add the delays to the children of the arr
+    ariaContainer.innerHTML += "<span class=".concat(className, ">").concat(el, "</span>");
+  });
+  parent.appendChild(ariaContainer); // Add the delays to the children of the arr
 
-  var children = parent.querySelectorAll(".".concat(className));
+  var children = ariaContainer.querySelectorAll(".".concat(className));
   children.forEach(function (child, index) {
     var itemStagger = stagger * index;
     child.style.cssText = "\n                        transition-delay: ".concat(itemStagger, "s;\n                        animation-delay: ").concat(itemStagger, "s;\n                        display: inline-block;\n                    ");
@@ -146,6 +151,7 @@ var ultratype = function ultratype(_ref) {
       };
       var className = params.className;
       var stagger = params.stagger;
+      var elContent = el.innerText;
       var words = el.innerText.split(' '); // Clear the element
 
       el.innerHTML = ''; // Handle the spaces between the words by add nbsp;
@@ -155,7 +161,7 @@ var ultratype = function ultratype(_ref) {
         newWordsArr.push(word);
         newWordsArr.push('&nbsp;');
       });
-      return handleSplit(newWordsArr, className, stagger, el);
+      return handleSplit(newWordsArr, className, stagger, el, elContent);
     },
     splitByLetter: function splitByLetter() {
       var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
@@ -164,10 +170,11 @@ var ultratype = function ultratype(_ref) {
       };
       var className = params.className;
       var stagger = params.stagger;
+      var elContent = el.innerText;
       var letters = el.innerText.split(''); // Clear the element
 
       el.innerHTML = '';
-      handleSplit(letters, className, stagger, el);
+      handleSplit(letters, className, stagger, el, elContent);
     },
     applyActiveClass: function applyActiveClass() {
       el.classList.add(activeClass);
@@ -211,7 +218,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53430" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49697" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
