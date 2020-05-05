@@ -25,7 +25,7 @@ Dynamic typography for the web
 ```
 
 ```js
-import ultratype from "ultratype";
+import ultratype from "ultratype/lib";
 
 const element = document.querySelector("h1");
 
@@ -56,7 +56,7 @@ Split and animate text in an accessible way
 ```
 
 ```js
-import ultratype from 'ultratype';
+import ultratype from 'ultratype/lib';
 
 const toogleButton = document.querySelector('.toggleText');
 const byLetter = document.querySelector('.by-letter);
