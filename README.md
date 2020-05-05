@@ -68,13 +68,16 @@ toggleButton.addEventListener('click', () => letters.toggleActiveClass())
 ```
 
 ```css
+:root {
+	/* Easing */
+	--transition-out: all 0.2s ease-out;
+	--transition-in: all 0.2s ease-in;
+}
+
 .letter {
 	opacity: 0;
-	color: var(--color-dark-accent);
 	transform: translateX(10px);
 	transition: var(--transition-out);
-	font-size: 10rem;
-	font-family: var(--special-accent-font);
 }
 .by-letter.active .letter {
 	opacity: 1;
