@@ -5,7 +5,6 @@ function handleSplit(arr, className, stagger, parent, text) {
     const ariaContainer = document.createElement('span');
     ariaContainer.setAttribute('aria-hidden', true);
 
-
     arr.map((el) => {
         if (el === ' ') {
             el = '&nbsp;'
