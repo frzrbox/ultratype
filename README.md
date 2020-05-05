@@ -56,15 +56,15 @@ Split and animate text in an accessible way
 ```
 
 ```js
-import ultratype from 'ultratype/lib';
+import ultratype from "ultratype/lib";
 
-const toogleButton = document.querySelector('.toggleText');
-const byLetter = document.querySelector('.by-letter);
+const toogleButton = document.querySelector(".toggleText");
+const byLetter = document.querySelector(".by-letter");
 
-const letters = ultratype({el: byLetter});
+const letters = ultratype({ el: byLetter });
 letters.splitByLetter();
 
-toggleButton.addEventListener('click', () => letters.toggleActiveClass())
+toggleButton.addEventListener("click", () => letters.toggleActiveClass());
 ```
 
 ```css
@@ -84,4 +84,30 @@ toggleButton.addEventListener('click', () => letters.toggleActiveClass())
 	transform: translateX(0px);
 	transition: var(--transition-in);
 }
+```
+
+### Accessibility
+
+Ultratype automatically converts the split text into accessible html
+
+**Input**
+
+```html
+<h1>Yooo I have clout</h1>
+```
+
+**Output**
+
+```html
+<h1 aria-label="Yooo I have clout">
+	<span aria-hidden="true">
+		<span>Yooo</span>
+		<span> </span>
+		<span>I</span>
+		<span> </span>
+		<span>have</span>
+		<span> </span>
+		<span>clout</span>
+	</span>
+</h1>
 ```
