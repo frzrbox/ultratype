@@ -1,31 +1,15 @@
-import { CreateTextSplit } from '../../src/index'
+import ultratype from '../../src/index'
 
 const byLetter = document.querySelector('.by-letter')
 const byWord = document.querySelector('.by-word')
 const addBtn = document.querySelector('.add-btn')
 const removeBtn = document.querySelector('.remove-btn')
-const letters = new CreateTextSplit()
-const words = new CreateTextSplit()
 
-letters.config({
-    el: byLetter,
-    activeClass: 'active'
-});
+const letters = ultratype({ el: byLetter })
+const words = ultratype({ el: byWord })
 
-letters.splitByLetter({
-    stagger: 0.05,
-    className: 'letter'
-})
-
-words.config({
-    el: byWord
-})
-
-words.splitByWord({
-    stagger: 0.05,
-    className: "word"
-})
-
+letters.splitByLetter()
+words.splitByWord()
 
 addBtn.addEventListener('click', () => {
     letters.applyActiveClass()
