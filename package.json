@@ -1,6 +1,6 @@
 {
 	"name": "ultratype",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Dynamic typography for the web",
 	"main": "lib/ultratype.js",
 	"files": [
@@ -9,7 +9,7 @@
 	"scripts": {
 		"dev": "parcel docs/index.html",
 		"build-docs": "parcel build docs/index.html",
-		"build-lib": "parcel build src/index.js -d lib/ultratype"
+		"build-lib": "parcel build src/index.js -d lib"
 	},
 	"keywords": [
 		"typography",
