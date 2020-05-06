@@ -202,6 +202,8 @@ var byLetter = document.querySelector('.by-letter');
 var byWord = document.querySelector('.by-word');
 var addBtn = document.querySelector('.add-btn');
 var removeBtn = document.querySelector('.remove-btn');
+var headingInput = document.querySelector('.heading-input');
+var subheadInput = document.querySelector('.subhead-input');
 var hero = (0, _index.default)({
   el: heroText
 });
@@ -224,6 +226,14 @@ addBtn.addEventListener('click', function () {
 removeBtn.addEventListener('click', function () {
   letters.removeActiveClass();
   words.removeActiveClass();
+});
+headingInput.addEventListener('change', function (e) {
+  byLetter.innerText = e.target.value;
+  letters.splitByLetter();
+});
+subheadInput.addEventListener('change', function (e) {
+  byWord.innerText = e.target.value;
+  words.splitByWord();
 });
 },{"../../src/index":"../src/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -253,7 +263,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56148" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56625" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

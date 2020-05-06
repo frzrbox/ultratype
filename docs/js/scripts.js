@@ -5,7 +5,8 @@ const byLetter = document.querySelector('.by-letter')
 const byWord = document.querySelector('.by-word')
 const addBtn = document.querySelector('.add-btn')
 const removeBtn = document.querySelector('.remove-btn')
-
+const headingInput = document.querySelector('.heading-input')
+const subheadInput = document.querySelector('.subhead-input')
 
 
 const hero = ultratype({ el: heroText })
@@ -24,4 +25,15 @@ addBtn.addEventListener('click', () => {
 removeBtn.addEventListener('click', () => {
     letters.removeActiveClass()
     words.removeActiveClass()
+})
+
+
+headingInput.addEventListener('change', e => {
+    byLetter.innerText = e.target.value
+    letters.splitByLetter()
+})
+
+subheadInput.addEventListener('change', e => {
+    byWord.innerText = e.target.value
+    words.splitByWord()
 })

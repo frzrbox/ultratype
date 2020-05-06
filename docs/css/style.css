@@ -11,6 +11,8 @@
 	/* Easing */
 	--transition-out: all 0.2s ease-out;
 	--transition-in: all 0.2s ease-in;
+	/* Breakpoints  */
+	--breakpoint-small: 768px;
 }
 
 html {
@@ -104,6 +106,10 @@ input {
 	background: var(--color-light-text);
 }
 
+input::placeholder {
+	color: var(--color-dark-text);
+}
+
 .full-height {
 	height: 100vh;
 	width: 100%;
@@ -149,6 +155,7 @@ input {
 /* Toggle Playground  */
 #playground {
 	background: var(--color-primary-accent);
+	position: relative;
 }
 
 #playground .buttons {
@@ -157,6 +164,26 @@ input {
 	right: 50px;
 	display: flex;
 	justify-content: space-between;
+}
+
+.input-container {
+	position: absolute;
+	top: 100px;
+	left: 20px;
+}
+
+.input-container input {
+	text-align: center;
+	height: 50px;
+	margin-bottom: 5px;
+}
+
+.heading-input {
+	width: 200px;
+}
+
+.subhead-input {
+	width: 350px;
 }
 
 .add-btn {
@@ -178,10 +205,17 @@ input {
 	transition: var(--transition-in);
 }
 
+.by-word {
+	max-width: 900px;
+	text-align: center;
+	line-height: 1.5;
+	margin: 0;
+}
+
 .word {
 	color: var(--color-light-text);
-	font-size: 4vw;
-	font-weight: 400;
+	font-size: 1.4rem;
+	font-weight: 300;
 	opacity: 0;
 	transform: translateY(10px);
 	transition: var(--transition-out);
@@ -191,4 +225,23 @@ input {
 	opacity: 1;
 	transform: translateY(0px);
 	transition: var(--transition-in);
+}
+
+@media (min-width: 768px) {
+	.input-container {
+		top: 200px;
+		left: calc(50% - 255px);
+		width: 510px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.input-container input {
+		margin: 0;
+		font-size: 1rem;
+	}
+
+	.by-word .word {
+		font-size: 4rem;
+	}
 }
