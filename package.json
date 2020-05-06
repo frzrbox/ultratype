@@ -1,6 +1,6 @@
 {
 	"name": "ultratype",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Dynamic typography for the web",
 	"main": "lib/ultratype.js",
 	"files": [
