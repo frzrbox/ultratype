@@ -30,10 +30,7 @@ function handleSplit(arr, className, stagger, parent, text) {
 
 const ultratype = ({ el, activeClass = 'active' }) => {
     const textSplit = {
-        splitByWord(params = { stagger: 0.1, className: "word" }) {
-            let className = params.className
-            let stagger = params.stagger
-
+        splitByWord({ stagger = 0.1, className = "word" } = {}) {
             const elContent = el.innerText
 
             const words = el.innerText.split(' ');
@@ -50,9 +47,7 @@ const ultratype = ({ el, activeClass = 'active' }) => {
             return handleSplit(newWordsArr, className, stagger, el, elContent)
 
         },
-        splitByLetter(params = { stagger: 0.1, className: "letter" }) {
-            let className = params.className
-            let stagger = params.stagger
+        splitByLetter({ stagger = 0.1, className = "letter" } = {}) {
 
             const elContent = el.innerText
 

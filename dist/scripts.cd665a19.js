@@ -145,12 +145,12 @@ var ultratype = function ultratype(_ref) {
       activeClass = _ref$activeClass === void 0 ? 'active' : _ref$activeClass;
   var textSplit = {
     splitByWord: function splitByWord() {
-      var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-        stagger: 0.1,
-        className: "word"
-      };
-      var className = params.className;
-      var stagger = params.stagger;
+      var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+          _ref2$stagger = _ref2.stagger,
+          stagger = _ref2$stagger === void 0 ? 0.1 : _ref2$stagger,
+          _ref2$className = _ref2.className,
+          className = _ref2$className === void 0 ? "word" : _ref2$className;
+
       var elContent = el.innerText;
       var words = el.innerText.split(' '); // Clear the element
 
@@ -164,12 +164,12 @@ var ultratype = function ultratype(_ref) {
       return handleSplit(newWordsArr, className, stagger, el, elContent);
     },
     splitByLetter: function splitByLetter() {
-      var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-        stagger: 0.1,
-        className: "letter"
-      };
-      var className = params.className;
-      var stagger = params.stagger;
+      var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+          _ref3$stagger = _ref3.stagger,
+          stagger = _ref3$stagger === void 0 ? 0.1 : _ref3$stagger,
+          _ref3$className = _ref3.className,
+          className = _ref3$className === void 0 ? "letter" : _ref3$className;
+
       var elContent = el.innerText;
       var letters = el.innerText.split(''); // Clear the element
 
@@ -214,8 +214,7 @@ var words = (0, _index.default)({
   el: byWord
 });
 hero.splitByLetter({
-  className: 'text-element',
-  stagger: 0.15
+  className: 'text-element'
 });
 letters.splitByLetter();
 words.splitByWord();
@@ -263,7 +262,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56625" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60901" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
