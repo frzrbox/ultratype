@@ -13,7 +13,7 @@ const hero = ultratype({ el: heroText })
 const letters = ultratype({ el: byLetter })
 const words = ultratype({ el: byWord })
 
-hero.splitByLetter({ className: 'text-element', stagger: 0.15 })
+hero.splitByLetter({ className: 'text-element' })
 letters.splitByLetter()
 words.splitByWord()
 
