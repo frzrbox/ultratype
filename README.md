@@ -2,6 +2,8 @@
 
 Dynamic typography for the web
 
+[Demo](https://ultratype.netlify.app/)
+
 `npm i ultratype`
 
 ## Api
