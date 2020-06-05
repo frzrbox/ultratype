@@ -204,6 +204,7 @@ var addBtn = document.querySelector('.add-btn');
 var removeBtn = document.querySelector('.remove-btn');
 var headingInput = document.querySelector('.heading-input');
 var subheadInput = document.querySelector('.subhead-input');
+var hoverEffect = document.querySelectorAll('.hover-effect');
 var hero = (0, _index.default)({
   el: heroText
 });
@@ -212,6 +213,14 @@ var letters = (0, _index.default)({
 });
 var words = (0, _index.default)({
   el: byWord
+});
+hoverEffect.forEach(function (effect) {
+  (0, _index.default)({
+    el: effect
+  }).splitByLetter({
+    className: 'hover-letter',
+    stagger: 0.05
+  });
 });
 hero.splitByLetter({
   className: 'text-element'
@@ -262,7 +271,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60901" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51651" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

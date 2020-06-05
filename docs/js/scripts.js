@@ -7,11 +7,18 @@ const addBtn = document.querySelector('.add-btn')
 const removeBtn = document.querySelector('.remove-btn')
 const headingInput = document.querySelector('.heading-input')
 const subheadInput = document.querySelector('.subhead-input')
+const hoverEffect = document.querySelectorAll('.hover-effect');
 
 
 const hero = ultratype({ el: heroText })
 const letters = ultratype({ el: byLetter })
 const words = ultratype({ el: byWord })
+
+hoverEffect.forEach(effect => {
+    ultratype({ el: effect }).splitByLetter({ className: 'hover-letter', stagger: 0.05 });
+})
+
+
 
 hero.splitByLetter({ className: 'text-element' })
 letters.splitByLetter()
