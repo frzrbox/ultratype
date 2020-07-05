@@ -118,14 +118,14 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"../src/index.js":[function(require,module,exports) {
-function handleSplit(arr, className, stagger, parent, text) {
+function handleSplit(arr, className, stagger, parent, text, from) {
   // Set the aria label for accessiblity
-  parent.setAttribute('aria-label', text);
-  var ariaContainer = document.createElement('span');
-  ariaContainer.setAttribute('aria-hidden', true);
+  parent.setAttribute("aria-label", text);
+  var ariaContainer = document.createElement("span");
+  ariaContainer.setAttribute("aria-hidden", true);
   arr.map(function (el) {
-    if (el === ' ') {
-      el = '&nbsp;';
+    if (el === " ") {
+      el = "&nbsp;";
     }
 
     ariaContainer.innerHTML += "<span class=".concat(className, ">").concat(el, "</span>");
@@ -135,46 +135,56 @@ function handleSplit(arr, className, stagger, parent, text) {
   var children = ariaContainer.querySelectorAll(".".concat(className));
   children.forEach(function (child, index) {
     var itemStagger = stagger * index;
-    child.style.cssText = "\n                        transition-delay: ".concat(itemStagger, "s;\n                        animation-delay: ").concat(itemStagger, "s;\n                        display: inline-block;\n                    ");
+
+    if (from === "right") {
+      itemStagger = stagger * (children.length - index - 1);
+    } // Don't and the animation delay to space in words
+
+
+    if (child.innerHTML !== "&nbsp;") {
+      child.style.cssText = "\n                            transition-delay: ".concat(itemStagger, "s;\n                            animation-delay: ").concat(itemStagger, "s;\n                            display: inline-block;\n                        ");
+    }
   });
 }
 
 var ultratype = function ultratype(_ref) {
   var el = _ref.el,
       _ref$activeClass = _ref.activeClass,
-      activeClass = _ref$activeClass === void 0 ? 'active' : _ref$activeClass;
+      activeClass = _ref$activeClass === void 0 ? "active" : _ref$activeClass;
   var textSplit = {
     splitByWord: function splitByWord() {
       var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
           _ref2$stagger = _ref2.stagger,
           stagger = _ref2$stagger === void 0 ? 0.1 : _ref2$stagger,
           _ref2$className = _ref2.className,
-          className = _ref2$className === void 0 ? "word" : _ref2$className;
+          className = _ref2$className === void 0 ? "word" : _ref2$className,
+          _ref2$from = _ref2.from,
+          from = _ref2$from === void 0 ? "left" : _ref2$from;
 
       var elContent = el.innerText;
-      var words = el.innerText.split(' '); // Clear the element
-
-      el.innerHTML = ''; // Handle the spaces between the words by add nbsp;
+      var words = el.innerText.split(" ");
+      el.innerHTML = ""; // Handle the spaces between the words by add nbsp;
 
       var newWordsArr = [];
       words.map(function (word) {
         newWordsArr.push(word);
-        newWordsArr.push('&nbsp;');
+        newWordsArr.push("&nbsp;");
       });
-      return handleSplit(newWordsArr, className, stagger, el, elContent);
+      return handleSplit(newWordsArr, className, stagger, el, elContent, from);
     },
     splitByLetter: function splitByLetter() {
       var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
           _ref3$stagger = _ref3.stagger,
           stagger = _ref3$stagger === void 0 ? 0.1 : _ref3$stagger,
           _ref3$className = _ref3.className,
-          className = _ref3$className === void 0 ? "letter" : _ref3$className;
+          className = _ref3$className === void 0 ? "letter" : _ref3$className,
+          _ref3$from = _ref3.from,
+          from = _ref3$from === void 0 ? "left" : _ref3$from;
 
       var elContent = el.innerText;
-      var letters = el.innerText.split(''); // Clear the element
-
-      el.innerHTML = '';
-      handleSplit(letters, className, stagger, el, elContent);
+      var letters = el.innerText.split("");
+      el.innerHTML = "";
+      handleSplit(letters, className, stagger, el, elContent, from);
     },
     applyActiveClass: function applyActiveClass() {
       el.classList.add(activeClass);
@@ -218,7 +228,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51651" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50451" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

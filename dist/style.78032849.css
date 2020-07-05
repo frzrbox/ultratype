@@ -37,6 +37,34 @@ h1 {
     margin: 0;
 }
 
+.text-align-center {
+    text-align-last: center;
+}
+
+.color-primary {
+    color: var(--color-primary-accent);
+}
+
+.color-light {
+    color: var(--color-light-text);
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    max-width: 1600px;
+}
+
 body {
     background: var(--color-background-light);
 }
@@ -263,6 +291,40 @@ input::placeholder {
 
     .by-word .word {
         font-size: 4rem;
+    }
+}
+
+/* Direction  */
+#directions {
+    background: var(--color-dark-accent);
+    padding: 20vh 0;
+}
+
+.animate-from-right {
+    font-size: 10vw;
+    text-align: center;
+    font-weight: 400;
+}
+
+.animate-from-right span {
+    color: var(--color-light-text);
+}
+
+.from-right {
+    animation: fadeIn 4s cubic-bezier(0.77, 0, 0.18, 1) both infinite;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(10vw);
+    }
+
+    100% {
+        transform: translateX(0px);
     }
 }
 
