@@ -1,26 +1,26 @@
 {
-	"name": "ultratype",
-	"version": "0.0.5",
-	"description": "Dynamic typography for the web",
-	"main": "lib/ultratype.js",
-	"files": [
-		"lib"
-	],
-	"scripts": {
-		"dev": "parcel docs/index.html",
-		"build-docs": "parcel build docs/index.html",
-		"build-lib": "parcel build src/index.js -d lib"
-	},
-	"keywords": [
-		"typography",
-		"animation",
-		"scroll",
-		"javascript",
-		"css"
-	],
-	"author": "frzrbox",
-	"license": "MIT",
-	"devDependencies": {
-		"parcel-bundler": "^1.12.4"
-	}
+  "name": "ultratype",
+  "version": "0.0.6",
+  "description": "Dynamic typography for the web",
+  "main": "lib/ultratype.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "dev": "parcel docs/index.html",
+    "build-docs": "parcel build docs/index.html",
+    "build-lib": "parcel build src/index.js -d lib"
+  },
+  "keywords": [
+    "typography",
+    "animation",
+    "scroll",
+    "javascript",
+    "css"
+  ],
+  "author": "frzrbox",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
 }

@@ -118,14 +118,14 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"../src/index.js":[function(require,module,exports) {
-function handleSplit(arr, className, stagger, parent, text) {
+function handleSplit(arr, className, stagger, parent, text, from) {
   // Set the aria label for accessiblity
-  parent.setAttribute('aria-label', text);
-  var ariaContainer = document.createElement('span');
-  ariaContainer.setAttribute('aria-hidden', true);
+  parent.setAttribute("aria-label", text);
+  var ariaContainer = document.createElement("span");
+  ariaContainer.setAttribute("aria-hidden", true);
   arr.map(function (el) {
-    if (el === ' ') {
-      el = '&nbsp;';
+    if (el === " ") {
+      el = "&nbsp;";
     }
 
     ariaContainer.innerHTML += "<span class=".concat(className, ">").concat(el, "</span>");
@@ -135,46 +135,68 @@ function handleSplit(arr, className, stagger, parent, text) {
   var children = ariaContainer.querySelectorAll(".".concat(className));
   children.forEach(function (child, index) {
     var itemStagger = stagger * index;
-    child.style.cssText = "\n                        transition-delay: ".concat(itemStagger, "s;\n                        animation-delay: ").concat(itemStagger, "s;\n                        display: inline-block;\n                    ");
+
+    if (from === "right") {
+      itemStagger = stagger * (children.length - index - 1);
+    }
+
+    if (from === "center") {
+      var middle = Math.floor(children.length / 2);
+
+      if (index === middle) {
+        itemStagger = 0;
+      } else {
+        // Set the items stagger equally to the other children starting from the middle
+        itemStagger = stagger * Math.abs(index - middle);
+        console.log(index - middle);
+      }
+    } // Don't and the animation delay to space in words
+
+
+    if (child.innerHTML !== "&nbsp;") {
+      child.style.cssText = "\n                            transition-delay: ".concat(itemStagger, "s;\n                            animation-delay: ").concat(itemStagger, "s;\n                            display: inline-block;\n                        ");
+    }
   });
 }
 
 var ultratype = function ultratype(_ref) {
   var el = _ref.el,
       _ref$activeClass = _ref.activeClass,
-      activeClass = _ref$activeClass === void 0 ? 'active' : _ref$activeClass;
+      activeClass = _ref$activeClass === void 0 ? "active" : _ref$activeClass;
   var textSplit = {
     splitByWord: function splitByWord() {
       var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
           _ref2$stagger = _ref2.stagger,
           stagger = _ref2$stagger === void 0 ? 0.1 : _ref2$stagger,
           _ref2$className = _ref2.className,
-          className = _ref2$className === void 0 ? "word" : _ref2$className;
+          className = _ref2$className === void 0 ? "word" : _ref2$className,
+          _ref2$from = _ref2.from,
+          from = _ref2$from === void 0 ? "left" : _ref2$from;
 
       var elContent = el.innerText;
-      var words = el.innerText.split(' '); // Clear the element
-
-      el.innerHTML = ''; // Handle the spaces between the words by add nbsp;
+      var words = el.innerText.split(" ");
+      el.innerHTML = ""; // Handle the spaces between the words by add nbsp;
 
       var newWordsArr = [];
       words.map(function (word) {
         newWordsArr.push(word);
-        newWordsArr.push('&nbsp;');
+        newWordsArr.push("&nbsp;");
       });
-      return handleSplit(newWordsArr, className, stagger, el, elContent);
+      return handleSplit(newWordsArr, className, stagger, el, elContent, from);
     },
     splitByLetter: function splitByLetter() {
       var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
           _ref3$stagger = _ref3.stagger,
           stagger = _ref3$stagger === void 0 ? 0.1 : _ref3$stagger,
           _ref3$className = _ref3.className,
-          className = _ref3$className === void 0 ? "letter" : _ref3$className;
+          className = _ref3$className === void 0 ? "letter" : _ref3$className,
+          _ref3$from = _ref3.from,
+          from = _ref3$from === void 0 ? "left" : _ref3$from;
 
       var elContent = el.innerText;
-      var letters = el.innerText.split(''); // Clear the element
-
-      el.innerHTML = '';
-      handleSplit(letters, className, stagger, el, elContent);
+      var letters = el.innerText.split("");
+      el.innerHTML = "";
+      handleSplit(letters, className, stagger, el, elContent, from);
     },
     applyActiveClass: function applyActiveClass() {
       el.classList.add(activeClass);
@@ -197,13 +219,16 @@ var _index = _interopRequireDefault(require("../../src/index"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var heroText = document.querySelector('.hero-text');
-var byLetter = document.querySelector('.by-letter');
-var byWord = document.querySelector('.by-word');
-var addBtn = document.querySelector('.add-btn');
-var removeBtn = document.querySelector('.remove-btn');
-var headingInput = document.querySelector('.heading-input');
-var subheadInput = document.querySelector('.subhead-input');
+var heroText = document.querySelector(".hero-text");
+var byLetter = document.querySelector(".by-letter");
+var byWord = document.querySelector(".by-word");
+var addBtn = document.querySelector(".add-btn");
+var removeBtn = document.querySelector(".remove-btn");
+var headingInput = document.querySelector(".heading-input");
+var subheadInput = document.querySelector(".subhead-input");
+var hoverEffect = document.querySelectorAll(".hover-effect");
+var animateFromRight = document.querySelector(".animate-from-right");
+var animateFromCenter = document.querySelector(".animate-from-center");
 var hero = (0, _index.default)({
   el: heroText
 });
@@ -213,24 +238,48 @@ var letters = (0, _index.default)({
 var words = (0, _index.default)({
   el: byWord
 });
+var fromRight = (0, _index.default)({
+  el: animateFromRight
+});
+var fromCenter = (0, _index.default)({
+  el: animateFromCenter
+});
+fromCenter.splitByLetter({
+  className: "from-center",
+  from: "center",
+  stagger: 0.5
+});
+fromRight.splitByLetter({
+  className: "from-right",
+  from: "right",
+  stagger: 0.2
+});
+hoverEffect.forEach(function (effect) {
+  (0, _index.default)({
+    el: effect
+  }).splitByLetter({
+    className: "hover-letter",
+    stagger: 0.05
+  });
+});
 hero.splitByLetter({
-  className: 'text-element'
+  className: "text-element"
 });
 letters.splitByLetter();
 words.splitByWord();
-addBtn.addEventListener('click', function () {
+addBtn.addEventListener("click", function () {
   letters.applyActiveClass();
   words.applyActiveClass();
 });
-removeBtn.addEventListener('click', function () {
+removeBtn.addEventListener("click", function () {
   letters.removeActiveClass();
   words.removeActiveClass();
 });
-headingInput.addEventListener('change', function (e) {
+headingInput.addEventListener("change", function (e) {
   byLetter.innerText = e.target.value;
   letters.splitByLetter();
 });
-subheadInput.addEventListener('change', function (e) {
+subheadInput.addEventListener("change", function (e) {
   byWord.innerText = e.target.value;
   words.splitByWord();
 });
@@ -262,7 +311,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60901" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60933" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
