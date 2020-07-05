@@ -24,6 +24,18 @@ function handleSplit(arr, className, stagger, parent, text, from) {
       itemStagger = stagger * (children.length - index - 1);
     }
 
+    if (from === "center") {
+      const middle = Math.floor(children.length / 2);
+
+      if (index === middle) {
+        itemStagger = 0;
+      } else {
+        // Set the items stagger equally to the other children starting from the middle
+        itemStagger = stagger * Math.abs(index - middle);
+        console.log(index - middle);
+      }
+    }
+
     // Don't and the animation delay to space in words
     if (child.innerHTML !== "&nbsp;") {
       child.style.cssText = `

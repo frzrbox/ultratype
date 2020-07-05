@@ -9,11 +9,19 @@ const headingInput = document.querySelector(".heading-input");
 const subheadInput = document.querySelector(".subhead-input");
 const hoverEffect = document.querySelectorAll(".hover-effect");
 const animateFromRight = document.querySelector(".animate-from-right");
+const animateFromCenter = document.querySelector(".animate-from-center");
 
 const hero = ultratype({ el: heroText });
 const letters = ultratype({ el: byLetter });
 const words = ultratype({ el: byWord });
 const fromRight = ultratype({ el: animateFromRight });
+const fromCenter = ultratype({ el: animateFromCenter });
+
+fromCenter.splitByLetter({
+  className: "from-center",
+  from: "center",
+  stagger: 0.5,
+});
 
 fromRight.splitByLetter({
   className: "from-right",

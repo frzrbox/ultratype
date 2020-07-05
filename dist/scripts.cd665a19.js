@@ -138,6 +138,18 @@ function handleSplit(arr, className, stagger, parent, text, from) {
 
     if (from === "right") {
       itemStagger = stagger * (children.length - index - 1);
+    }
+
+    if (from === "center") {
+      var middle = Math.floor(children.length / 2);
+
+      if (index === middle) {
+        itemStagger = 0;
+      } else {
+        // Set the items stagger equally to the other children starting from the middle
+        itemStagger = stagger * Math.abs(index - middle);
+        console.log(index - middle);
+      }
     } // Don't and the animation delay to space in words
 
 
@@ -216,6 +228,7 @@ var headingInput = document.querySelector(".heading-input");
 var subheadInput = document.querySelector(".subhead-input");
 var hoverEffect = document.querySelectorAll(".hover-effect");
 var animateFromRight = document.querySelector(".animate-from-right");
+var animateFromCenter = document.querySelector(".animate-from-center");
 var hero = (0, _index.default)({
   el: heroText
 });
@@ -227,6 +240,14 @@ var words = (0, _index.default)({
 });
 var fromRight = (0, _index.default)({
   el: animateFromRight
+});
+var fromCenter = (0, _index.default)({
+  el: animateFromCenter
+});
+fromCenter.splitByLetter({
+  className: "from-center",
+  from: "center",
+  stagger: 0.5
 });
 fromRight.splitByLetter({
   className: "from-right",

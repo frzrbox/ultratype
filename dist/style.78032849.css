@@ -300,21 +300,18 @@ input::placeholder {
     padding: 20vh 0;
 }
 
-.animate-from-right {
+.animate-from-right,
+.animate-from-center {
     font-size: 10vw;
-    text-align: center;
     font-weight: 400;
 }
 
-.animate-from-right span {
-    color: var(--color-light-text);
-}
-
 .from-right {
-    animation: fadeIn 4s cubic-bezier(0.77, 0, 0.18, 1) both infinite;
+    color: var(--color-light-text);
+    animation: sideWave 4s cubic-bezier(0.77, 0, 0.18, 1) both infinite;
 }
 
-@keyframes fadeIn {
+@keyframes sideWave {
     0% {
         transform: translateX(0px);
     }
@@ -325,6 +322,25 @@ input::placeholder {
 
     100% {
         transform: translateX(0px);
+    }
+}
+
+.from-center {
+    color: var(--color-light-text);
+    animation: centerScale 3s ease infinite;
+}
+
+@keyframes centerScale {
+    0% {
+        transform: scale(1);
+    }
+
+    90% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
 
