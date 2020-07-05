@@ -16,7 +16,7 @@ Dynamic typography for the web
 
 <!-- prettier-ignore -->
 | Name        | Description                       | Default | Required |
-|-------------|-----------------------------------|---------|----------|
+| ----------- | --------------------------------- | ------- | -------- |
 | el          | Element that will be affected     | null    | true     |
 | activeClass | A class to manipulate the element | active  | false    |
 
@@ -42,13 +42,22 @@ Split and animate text in an accessible way
 **Methods**
 
 <!-- prettier-ignore -->
-| Name              | Description                     | Props              |
-| ----------------- | ------------------------------- | ------------------ |
-| splitByLetter     | splits an element by letter     | stagger, className |
-| splitByWord       | splits an element by word       | stagger, className |
-| applyActiveClass  | add activeClass to element      | none               |
-| removeActiveClass | remove activeClass from element | none               |
-| toggleActiveClass | toggles activeClass on element  | none               |
+| Name              | Description                     | Props                    |
+| ----------------- | ------------------------------- | ------------------------ |
+| splitByLetter     | splits an element by letter     | stagger, className, from |
+| splitByWord       | splits an element by word       | stagger, className, from |
+| applyActiveClass  | add activeClass to element      | none                     |
+| removeActiveClass | remove activeClass from element | none                     |
+| toggleActiveClass | toggles activeClass on element  | none                     |
+
+### Props
+All props are optional
+| Name      | Description                                  | Optons                               |
+| --------- | -------------------------------------------- | ------------------------------------ |
+| stagger   | The animation delay between text             | Value between 0 and 1 (default: 0.1) |
+| className | class given to each element in the animation | Any string (default: letter)         |
+| from      | direction the animation will start from      | left, right, center (default: left)  |
+
 
 ### Usage
 
@@ -64,7 +73,7 @@ const toogleButton = document.querySelector(".toggleText");
 const byLetter = document.querySelector(".by-letter");
 
 const letters = ultratype({ el: byLetter });
-letters.splitByLetter();
+letters.splitByLetter({from: 'right'});
 
 toggleButton.addEventListener("click", () => letters.toggleActiveClass());
 ```
