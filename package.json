@@ -9,7 +9,7 @@
   "scripts": {
     "build:lib": "npx rollup -c",
     "dev": "npx parcel docs/index.html",
-    "build:docs": "npx parcel build docx/index.html"
+    "build:docs": "npx parcel build docs/index.html"
   },
   "keywords": [
     "typography",
