@@ -7,9 +7,9 @@
     "lib"
   ],
   "scripts": {
-    "dev": "parcel docs/index.html",
-    "build-docs": "parcel build docs/index.html",
-    "build-lib": "parcel build src/index.js -d lib"
+    "build:lib": "npx rollup -c",
+    "dev": "npx parcel docs/index.html",
+    "build:docs": "npx parcel build docx/index.html"
   },
   "keywords": [
     "typography",
@@ -21,6 +21,12 @@
   "author": "frzrbox",
   "license": "MIT",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "@rollup/plugin-babel": "^5.1.0",
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "parcel-bundler": "^1.12.4",
+    "rollup-plugin-livereload": "^1.3.0",
+    "rollup-plugin-serve": "^1.0.2",
+    "rollup-plugin-terser": "^6.1.0"
   }
 }
