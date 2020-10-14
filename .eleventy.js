@@ -1,13 +1,24 @@
-module.exports = function(eleventyConfig) {
-    // Add a filter using the Config API
-    eleventyConfig.addFilter( "myFilter", function() {});
-  
-    // You can return your Config object (optional).
+// Transforms
+const htmlMinTransform = require("./site/transforms/html-min-transform.js");
+
+// Create a helpful production flag
+const isProduction = process.env.NODE_ENV === "production";
+
+module.exports = (config) => { 
+
+    if (isProduction) {
+    config.addTransform("htmlmin", htmlMinTransform);
+    }
+
+    config.addPassthroughCopy('./src/assets/');
+
     return {
-      markdownTemplateEngine: "njk",
-      dir: {
-        input: "site",
-        output: "dist"
-      }
-    };
-  };
+        markdownTemplateEngine: 'njk',
+        dataTemplateEngine: "njk",
+        htmlTemplateEngine: "njk",
+        dir: {
+            input: 'site',
+            output: 'dist'
+        }
+    }
+}
