@@ -7,9 +7,9 @@
     "lib"
   ],
   "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
     "build:lib": "npx rollup -c",
-    "dev": "npx parcel docs/index.html",
-    "build:docs": "npx parcel build docs/index.html"
+    "build:docs": "npx eleventy"
   },
   "keywords": [
     "typography",
