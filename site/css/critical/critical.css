@@ -29,13 +29,13 @@ body{
     }
 }
 
-.home-hero__heading .word{
+.home-hero__heading .letter{
     overflow: hidden;
     position: relative;
     color: transparent;
 }
 
-.home-hero__heading .word::before{
+.home-hero__heading .letter::before{
     position: absolute;
     content: var(--content);
     height: 100%;
@@ -44,6 +44,7 @@ body{
     animation: slideIn 0.6s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
     transform-origin: bottom;
 }
+
 
   @keyframes slideIn {
     from {

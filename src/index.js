@@ -1,70 +1,85 @@
-function handleSplit(parent, elements, className){
-    // Create accessible wrapper
-   parent.setAttribute('aria-label', parent.innerText);
-   parent.innerHTML = `<span aria-hidden="true"></span>`;
+function handleSplit(parent, elements, className) {
+  // Create accessible wrapper
+  parent.setAttribute("aria-label", parent.innerText);
+  parent.innerHTML = `<span aria-hidden="true"></span>`;
 
-   const wrapper = parent.querySelector('[aria-hidden="true"]');
+  const wrapper = parent.querySelector('[aria-hidden="true"]');
 
-    elements.forEach(el => {
-        // Edge case if value is a space
-        if(el === ' '){el = '&nbsp;'}
+  elements.forEach((el) => {
+    // Edge case if value is a space
+    if (el === " ") {
+      el = "&nbsp;";
+    }
 
-        wrapper.innerHTML += `<span class="${className}">${el}</span>`
-    })
+    wrapper.innerHTML += `<span class="${className}">${el}</span>`;
+  });
 
-    // Setup base styles
-    parent.querySelectorAll(`.${className}`).forEach((el, i) => {
-        // Get config attributes
-        const delay = Number(parent.getAttribute('data-delay'));
-        const initialDelay = Number(parent.getAttribute('data-initial-delay'));
-        const staggerMode = parent.getAttribute('data-stagger-mode');
+  // Setup base styles
+  const innerElements = parent.querySelectorAll(`.${className}`);
+  const filteredElements = Array.from(innerElements).filter(el => el.innerText.replace(/\s/g,"") !== "")
+  filteredElements.forEach((el, i) => {
+      // Get config attributes
+      const delay = Number(parent.getAttribute("data-delay"));
+      const initialDelay = Number(parent.getAttribute("data-initial-delay"));
+      const staggerMode = parent.getAttribute("data-stagger-mode");
 
-        let elDelay = delay;
+      let elDelay = delay;
 
-        switch (staggerMode){
-            case 'every other':
-                // Only even letter will get a delay
-                if((i + 1) % 2 === 0){
-                     elDelay = delay;
-                }else{
-                     elDelay = 0;
-                }
-                break;
-            default:
-                 elDelay = delay * i;
-        };
+      switch (staggerMode) {
+        case "every other":
+          if (i % 2 === 0) {
+            elDelay = delay;
+          } else {
+            elDelay = 0;
+          }
+          break;
+        case "right":
+          elDelay = delay * (filteredElements.length - i - 1);
+          break;
+        case "center":
+          const middle = Math.floor(filteredElements.length / 2);
 
-        if(initialDelay){
-            elDelay = elDelay + initialDelay
-        }
+          if (i === middle) {
+            elDelay = 0;
+          } else {
+            elDelay = delay * Math.abs(i - middle);
+          }
+          break;
+        default:
+          elDelay = delay * i;
+      }
 
-        el.style = `
-            display: inline-block;
-            --content: '${el.innerText}';
-            --delay: ${elDelay}s;
-        `;
-    });
+      if (initialDelay) {
+        elDelay = elDelay + initialDelay;
+      }
+
+      el.style = `
+     display: inline-block;
+     --content: '${el.innerText}';
+     --delay: ${elDelay}s;
+ `;
+  });
 }
 
-function splitByLetter(el){
-   const splitEl = el.innerText.split('');
+function splitByLetter(el) {
+  const splitEl = el.innerText.split("");
 
-   handleSplit(el, splitEl, 'letter')
+  handleSplit(el, splitEl, "letter");
 }
 
-function splitByWord(el){
-    const splitEl = el.innerText.split(' ');
-    let newWords = [];
+function splitByWord(el) {
+  const splitEl = el.innerText.split(" ");
+  let newWords = [];
 
-    splitEl.map(word => {
-        newWords.push(word);
-        newWords.push('&nbsp;');
-    })
+  splitEl.map((word) => {
+    newWords.push(word);
+    newWords.push("&nbsp;");
+  });
 
-    handleSplit(el, newWords, 'word');
+  handleSplit(el, newWords, "word");
 }
 
 module.exports = {
-    splitByLetter,
-    splitByWord
-}
+  splitByLetter,
+  splitByWord,
+};
