@@ -9,8 +9,8 @@ const runBabel = require("./gulp-tasks/babel");
 // prevent the task being run when we run `gulp watch`, but it
 // will run when a file changes.
 const watcher = () => {
-    watch("./src/css/**/*", { ignoreInitial: true }, css);
-    watch("./src/js/**/*", { ignoreInitial: true }, runBabel);
+    watch("./site/css/**/*", { ignoreInitial: true }, css);
+    watch("./site/js/**/*", { ignoreInitial: true }, runBabel);
 };
 
 // The default (if someone just runs `gulp`) is to run each task in parrallel

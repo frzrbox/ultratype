@@ -1,13 +1,16 @@
 {% extends "layouts/base.njk" %}
+{% set pageScripts = ['../../js/script.js'] %}
 
 {% block content %}
     <section class="home-hero">
-        <h2 class="home-hero__heading">{{hero.heading}}</h2>
-        
-        <div class="home-hero__links-container">
-            {% for cta in hero.call_to_actions %}
-                <a class="home-hero__link" {% if cta.target_blank %} target="_blank" {% endif %} href="{{cta.to}}">{{cta.content}}</a>
-            {% endfor %}
+        <div class="container">        
+            <h2 class="home-hero__heading split-by-letter" data-delay="0.035">{{hero.heading}}</h2>
+            
+            <div class="home-hero__links-container">
+                {% for cta in hero.call_to_actions %}
+                    <a class="home-hero__link" {% if cta.target_blank %} target="_blank" {% endif %} href="{{cta.to}}">{{cta.content}}</a>
+                {% endfor %}
+            </div>
         </div>
     </section>
 {% endblock %}

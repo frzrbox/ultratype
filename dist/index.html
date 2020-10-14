@@ -33,9 +33,7 @@
   <meta property="og:description" content="Dynamic typography for the web" />
 
     <style>
-        body{
-    background: red;
-}
+        html{box-sizing:border-box}body{box-sizing:inherit;margin:0;padding:0}.container{max-width:1440px;width:90%;margin:0 auto}.home-hero{padding:5vh 0}.home-hero__heading{font-size:6vw}@media(min-width:1640px){.home-hero__heading{font-size:6.1em}}.home-hero__heading .letter{overflow:hidden;position:relative;color:transparent}.home-hero__heading .letter::before{position:absolute;content:var(--content);height:100%;width:100%;color:#333;animation:slideIn .2s var(--delay) cubic-bezier(.17,.84,.44,1) both}@keyframes slideIn{from{transform:translate3D(0,100%,0) skew(60deg)}}
     </style>
     
     
@@ -43,18 +41,24 @@
   <body>
     <main>
     <section class="home-hero">
-        <h2 class="home-hero__heading">A lightweight library for creating typographic animations</h2>
-        
-        <div class="home-hero__links-container">
+        <div class="container">        
+            <h2 class="home-hero__heading split-by-letter" data-delay="0.035">A lightweight library for creating typographic animations</h2>
             
-                <a class="home-hero__link"  href="/docs">View Docs</a>
-            
-                <a class="home-hero__link"  target="_blank"  href="https://github.com/frzrbox/ultratype">Github</a>
-            
+            <div class="home-hero__links-container">
+                
+                    <a class="home-hero__link"  href="/docs">View Docs</a>
+                
+                    <a class="home-hero__link"  target="_blank"  href="https://github.com/frzrbox/ultratype">Github</a>
+                
+            </div>
         </div>
     </section>
 </main>
 
+    
+        
+            <script src="../../js/script.js?"></script>
+        
     
   </body>
 </html>

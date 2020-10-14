@@ -22,14 +22,14 @@ const calculateOutput = ({ history }) => {
   // to the _includes directory, so nunjucks can include it
   // directly in a <style>
   if (criticalStyles.includes(sourceFileName)) {
-    response = "./src/_includes/";
+    response = "./site/_includes/";
   }
 
   return response;
 };
 
 const css = () => {
-  return src("./src/css/**/*")
+  return src("./site/css/**/*")
     .pipe(cleanCSS({ compatibility: "ie8" }))
     .pipe(dest(calculateOutput, { sourceMaps: !isProduction }));
 };
