@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/ucw5ixt.css");
+
 html{
     box-sizing: border-box;
 }
@@ -6,6 +8,14 @@ body{
     box-sizing: inherit;
     margin: 0;
     padding: 0;
+}
+
+h1,
+h2,
+h3{
+    font-family: alverata, serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .container{
@@ -20,13 +30,7 @@ body{
 
 
 .home-hero__heading{
-    font-size: 6vw;
-}
-
-@media(min-width: 1640px){
-    .home-hero__heading{
-        font-size: 6.1em;
-    }
+    font-size: clamp(50px, 10vw, 161px);
 }
 
 .home-hero__heading .letter{

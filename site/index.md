@@ -3,7 +3,7 @@ layout: 'layouts/home.njk'
 title: Home
 metaDesc: Dynamic typography for the web
 hero:
-    heading: A lightweight library for creating typographic animations
+    heading: A mini library for splitting type
     call_to_actions:
         - to: '/docs'
           content: View Docs
