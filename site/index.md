@@ -1,5 +1,7 @@
 ---
 layout: 'layouts/home.njk'
+title: Home
+metaDesc: Dynamic typography for the web
 hero:
     heading: A lightweight library for creating typographic animations
     call_to_actions:
