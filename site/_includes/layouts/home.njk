@@ -1,7 +1,13 @@
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-    <section>
-        <h1>{{title}}</h1>
+    <section class="home-hero">
+        <h2 class="home-hero__heading">{{hero.heading}}</h2>
+        
+        <div class="home-hero__links-container">
+            {% for cta in hero.call_to_actions %}
+                <a class="home-hero__link" {% if cta.target_blank %} target="_blank" {% endif %} href="{{cta.to}}">{{cta.content}}</a>
+            {% endfor %}
+        </div>
     </section>
 {% endblock %}
