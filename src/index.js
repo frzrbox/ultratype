@@ -52,6 +52,19 @@ function splitByLetter(el){
    handleSplit(el, splitEl, 'letter')
 }
 
+function splitByWord(el){
+    const splitEl = el.innerText.split(' ');
+    let newWords = [];
+
+    splitEl.map(word => {
+        newWords.push(word);
+        newWords.push('&nbsp;');
+    })
+
+    handleSplit(el, newWords, 'word');
+}
+
 module.exports = {
-    splitByLetter
+    splitByLetter,
+    splitByWord
 }
