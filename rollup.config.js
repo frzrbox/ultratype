@@ -12,7 +12,7 @@ export default {
       file: "lib/index.js",
       format: "umd",
       name: "Ultratype",
-    },
+    }
   ],
   plugins: [
     babel({
