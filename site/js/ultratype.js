@@ -81,16 +81,18 @@ function handleSplit(parent, elements, className) {
 
           if (j === elementSpans.length - 1) {
             span.addEventListener("animationend", () => {
-              let nextIndex = i + 1;
-              // Need to do this whole thing or won't know what way the next item splits by
-              const nextItemSpans = Array.from(
-                ultratypeGroupChildren[nextIndex].querySelector(
-                  '[aria-hidden="true"'
-                ).children
-              );
-              nextItemSpans.forEach((span) => {
-                span.style.animationPlayState = "running";
-              });
+              if(i < ultratypeGroupChildren.length - 1){
+                let nextIndex = i + 1;
+                // Need to do this whole thing or won't know what way the next item splits by
+                const nextItemSpans = Array.from(
+                  ultratypeGroupChildren[nextIndex].querySelector(
+                    '[aria-hidden="true"'
+                  ).children
+                );
+                nextItemSpans.forEach((span) => {
+                  span.style.animationPlayState = "running";
+                });
+              }
             });
           }
         });
