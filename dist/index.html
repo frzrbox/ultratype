@@ -33,7 +33,7 @@
   <meta property="og:description" content="Dynamic typography for the web" />
 
     <style>
-        @import url(https://use.typekit.net/ucw5ixt.css);html{box-sizing:border-box}body{box-sizing:inherit;margin:0;padding:0}h1,h2,h3{font-family:alverata,serif;font-weight:700;font-style:normal}.container{max-width:1440px;width:90%;margin:0 auto}.home-hero{padding:5vh 0}.home-hero__heading{font-size:clamp(50px,10vw,161px)}.home-hero__heading .letter{overflow:hidden;position:relative;color:transparent}.home-hero__heading .letter::before{position:absolute;content:var(--content);height:100%;width:100%;color:#333;animation:slideIn .6s var(--delay) cubic-bezier(.17,.84,.44,1) both;transform-origin:bottom}@keyframes slideIn{from{transform:translate3D(0,100%,0) skew(30deg)}}
+        @import url(https://use.typekit.net/ucw5ixt.css);html{box-sizing:border-box}body{box-sizing:inherit;margin:0;padding:0}h1,h2,h3{font-family:alverata,serif;font-weight:700;font-style:normal}.container{max-width:1440px;width:90%;margin:0 auto}.home-hero{padding:5vh 0}.home-hero__heading{font-size:clamp(50px,10vw,161px)}.home-hero__heading .letter{overflow:hidden;position:relative;color:transparent}.home-hero__heading .letter::before{position:absolute;content:var(--content);height:100%;width:100%;color:#333;animation:slideIn .6s var(--delay) cubic-bezier(.17,.84,.44,1) both;transform-origin:bottom}@keyframes slideIn{from{transform:translate3D(0,100%,0) skew(30deg)}}.test-fade .word{animation:fade .3s var(--delay) cubic-bezier(.17,.84,.44,1) both}@keyframes fade{from{opacity:0}}
     </style>
     
     
@@ -41,8 +41,12 @@
   <body>
     <main>
     <section class="home-hero">
-        <div class="container">        
-            <h2 class="home-hero__heading split-by-letter" data-delay="0.03">A mini library for splitting type</h2>
+        <div class="container">
+            <div data-ultratype-group>
+            <h2 class="home-hero__heading split-by-letter" data-delay="0.03">A mini library for splitting type</h2>  
+                <h3 class="split-by-word test-fade" data-delay="0.05">This is spilt by word</h3>
+                <h3 class="split-by-word test-fade" data-delay="0.5">Another test</h3>  
+            </div>        
             
             <div class="home-hero__links-container">
                 

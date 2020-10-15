@@ -1,4 +1,4 @@
-import {splitByLetter, splitByWord} from '../../src'
+import {splitByLetter, splitByWord} from './ultratype'
 
 const splitLetterElements = document.querySelectorAll('.split-by-letter');
 const splitWordElements = document.querySelectorAll('.split-by-word');

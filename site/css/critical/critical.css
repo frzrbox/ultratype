@@ -55,3 +55,13 @@ h3{
       transform: translate3D(0, 100%, 0) skew(30deg);
     }
   }
+
+  .test-fade .word{
+    animation: fade 0.3s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
+  }
+
+  @keyframes fade{
+      from{
+          opacity: 0;
+      }
+  }

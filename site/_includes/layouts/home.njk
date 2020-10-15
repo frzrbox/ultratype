@@ -3,8 +3,12 @@
 
 {% block content %}
     <section class="home-hero">
-        <div class="container">        
-            <h2 class="home-hero__heading split-by-letter" data-delay="0.03">{{hero.heading}}</h2>
+        <div class="container">
+            <div data-ultratype-group>
+            <h2 class="home-hero__heading split-by-letter" data-delay="0.03">{{hero.heading}}</h2>  
+                <h3 class="split-by-word test-fade" data-delay="0.05">This is spilt by word</h3>
+                <h3 class="split-by-word test-fade" data-delay="0.5">Another test</h3>  
+            </div>        
             
             <div class="home-hero__links-container">
                 {% for cta in hero.call_to_actions %}
