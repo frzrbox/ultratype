@@ -4,11 +4,9 @@
 {% block content %}
     <section class="home-hero">
         <div class="container">
-            <h2 class="home-hero__heading split-by-letter" data-delay="0.03">{{hero.heading}}</h2> 
-            <div class="home-hero__links-container">
-                {% for cta in hero.call_to_actions %}
-                    <a class="home-hero__link split-by-letter" data-stagger-mode="center" data-delay="0.05" {% if cta.target_blank %} target="_blank" {% endif %} href="{{cta.to}}">{{cta.content}}</a>
-                {% endfor %}
+            <div class="home-hero__heading-container" data-ultratype-group>
+                <h2 class="home-hero__heading split-by-letter" data-delay="0.03">{{hero.heading}}</h2> 
+                <h3 class="home-hero__subheading split-by-word"  data-delay="0.1">{{hero.subheading}}</h3>
             </div>
         </div>
     </section>
