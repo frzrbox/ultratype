@@ -1,4 +1,4 @@
-function handleSplit(parent, elements, className) {
+export function handleSplit(parent, elements, className) {
   // Create accessible wrapper
   parent.setAttribute("aria-label", parent.innerText);
   parent.innerHTML = `<span aria-hidden="true"></span>`;
@@ -101,13 +101,13 @@ function handleSplit(parent, elements, className) {
   }
 }
 
-function splitByLetter(el) {
+export function splitByLetter(el) {
   const splitEl = el.innerText.split("");
 
   handleSplit(el, splitEl, "letter");
 }
 
-function splitByWord(el) {
+export function splitByWord(el) {
   const splitEl = el.innerText.split(" ");
   let newWords = [];
 
@@ -118,8 +118,3 @@ function splitByWord(el) {
 
   handleSplit(el, newWords.slice(0, -1), "word");
 }
-
-module.exports = {
-  splitByLetter,
-  splitByWord,
-};
