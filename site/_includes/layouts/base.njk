@@ -24,8 +24,8 @@
     {% endif %}
   </head>
   <body>
+    {% include "partials/header.njk" %}
     <main>{% block content %}{% endblock %}</main>
-
     {% if pageScripts %}
         {% for item in pageScripts %}
             <script src="{{ item }}?{{ assetHash }}"></script>

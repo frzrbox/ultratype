@@ -35,12 +35,21 @@
   <meta property="og:description" content="Dynamic typography for the web" />
 
     <style>
-        @import url(https://use.typekit.net/ucw5ixt.css);:root{--color-text:#2e2e2e;--color-background:#fffffe;--color-headings:#181818;--color-light-accent:#f2eef5;--color-primary:#4fc4cf;--color-secondary:#994ff3;--color-tertiary:#fbdd74}html{box-sizing:border-box}*,::after,::before{color:var(--color-text)}body{box-sizing:inherit;margin:0;padding:0;font-family:droid-sans,sans-serif}h1,h2{font-family:alverata,serif;font-weight:700;font-style:normal}a{text-decoration:none}.container{max-width:1440px;width:90%;margin:0 auto}a.split-by-letter:hover .letter{animation:pulse .3s var(--delay) cubic-bezier(.17,.84,.44,1) both}@keyframes pulse{0%,100%{transform:scale(1) rotateX(0)}50%{transform:scale(1.4) rotateX(40deg)}}.home-hero{padding:5vh 0}.home-hero__heading{font-size:clamp(50px,10vw,161px)}.home-hero__heading .letter{animation:slideIn .6s var(--delay) cubic-bezier(.17,.84,.44,1) both;transform-origin:bottom}.home-hero__subheading{font-size:clamp(18px,2.5vw,30px);padding:15px 35px;background:var(--color-text);border-radius:10px;width:fit-content;animation:fade .5s 1s both;font-weight:400;letter-spacing:.05em;cursor:pointer}.home-hero__subheading .word{color:var(--color-tertiary);animation:flipUp .2s var(--delay) cubic-bezier(.17,.84,.44,1) both;transform-origin:bottom}@keyframes flipUp{from{transform:scaleY(0)}}.home-hero__link{display:block;font-size:2rem;margin:.5em 0;width:fit-content}.home-hero__link .letter{animation:fade .2s var(--delay) cubic-bezier(.17,.84,.44,1) both}@keyframes slideIn{from{transform:translate3D(0,100%,0) skew(20deg) scale(0)}}@keyframes fade{from{opacity:0}}
+        @import url(https://use.typekit.net/ucw5ixt.css);:root{--color-text:#2e2e2e;--color-background:#fffffe;--color-headings:#181818;--color-light-accent:#f2eef5;--color-primary:#4fc4cf;--color-secondary:#994ff3;--color-tertiary:#fbdd74}html{box-sizing:border-box}*,::after,::before{color:var(--color-text)}body{box-sizing:inherit;margin:0;padding:0;font-family:droid-sans,sans-serif}h1,h2{font-family:alverata,serif;font-weight:700;font-style:normal}a{text-decoration:none}a:hover{text-decoration:underline}.container{max-width:1440px;width:90%;margin:0 auto}.header{padding:20px 0}.header__inner{display:flex;align-items:center;justify-content:space-between}.header__site-branding__inner{margin:0}.header__site-branding__inner:hover .letter{animation:pulse .4s var(--delay) linear infinite}.header__navigation__link:not(:last-child){margin-right:20px}.home-hero{padding:5vh 0}.home-hero__heading{font-size:clamp(50px,10vw,161px)}.home-hero__heading .letter{animation:slideIn .6s var(--delay) cubic-bezier(.17,.84,.44,1) both;transform-origin:bottom}.home-hero__subheading{font-size:clamp(18px,2.5vw,30px);padding:15px 35px;background:var(--color-text);border-radius:10px;width:fit-content;animation:fade .5s 1s both;font-weight:400;letter-spacing:.05em;cursor:pointer}.home-hero__subheading .word{color:var(--color-light-accent);animation:flipUp .2s var(--delay) cubic-bezier(.17,.84,.44,1) both;transform-origin:bottom}.home-hero__link{display:block;font-size:2rem;margin:.5em 0;width:fit-content}.home-hero__link .letter{animation:fade .2s var(--delay) cubic-bezier(.17,.84,.44,1) both}@keyframes slideIn{0%{transform:translate3D(0,100%,0) skew(20deg) scale(0);color:var(--color-primary)}33%{color:var(--color-primary)}66%{color:var(--color-secondary)}99%{color:var(--color-tertiary)}}@keyframes fade{from{opacity:0}}@keyframes pulse{0%,100%{transform:rotateX(0)}50%{transform:rotateX(60deg)}}@keyframes flipUp{from{transform:scaleY(0)}}
     </style>
     
     
   </head>
   <body>
+    <header class="header">
+    <div class="container header__inner">
+        <a href="/" class="header__site-branding__outer"><h1 class="header__site-branding__inner split-by-letter" data-delay="0.05">Ultratype</h1></a>
+        <nav class="header__navigation">
+            <a class="header__navigation__link" href="/docs">Documentation</a>
+            <a class="header__navigation__link" href="https://github.com/frzrbox/ultratype" target="_blank">Github</a>
+        </nav>
+    </div>
+</header>
     <main>
     <section class="home-hero">
         <div class="container">
@@ -51,10 +60,9 @@
         </div>
     </section>
 </main>
-
     
         
-            <script src="../../js/script.js?afcb-dcac-4765"></script>
+            <script src="../../js/script.js?8921-3cbc-80cf"></script>
         
     
   </body>
