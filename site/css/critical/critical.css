@@ -1,67 +1,88 @@
 @import url("https://use.typekit.net/ucw5ixt.css");
 
-html{
-    box-sizing: border-box;
+:root {
+  --color-text: #333;
 }
 
-body{
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  color: var(--color-text);
+}
+
+body {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-family: droid-sans, sans-serif;
 }
 
 h1,
-h2,
-h3{
-    font-family: alverata, serif;
-    font-weight: 700;
-    font-style: normal;
+h2 {
+  font-family: alverata, serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
-.container{
-    max-width: 1440px;
-    width: 90%;
-    margin: 0 auto;
+a {
+  text-decoration: none;
 }
 
-.home-hero{
-    padding: 5vh 0;
+.container {
+  max-width: 1440px;
+  width: 90%;
+  margin: 0 auto;
 }
 
-
-.home-hero__heading{
-    font-size: clamp(50px, 10vw, 161px);
+a.split-by-letter:hover .letter {
+  animation: pulse 0.3s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
 }
 
-.home-hero__heading .letter{
-    overflow: hidden;
-    position: relative;
-    color: transparent;
-}
-
-.home-hero__heading .letter::before{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    color: #333;
-    animation: slideIn 0.6s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
-    content: var(--content);
-    transform-origin: bottom;
-}
-
-
-  @keyframes slideIn {
-    from {
-      transform: translate3D(0, 100%, 0) skew(30deg);
-    }
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1) rotateX(0);
   }
-
-  .test-fade .word{
-    animation: fade 0.3s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
+  50% {
+    transform: scale(1.4) rotateX(40deg);
   }
+}
 
-  @keyframes fade{
-      from{
-          opacity: 0;
-      }
+.home-hero {
+  padding: 5vh 0;
+}
+
+.home-hero__heading {
+  font-size: clamp(50px, 10vw, 161px);
+}
+
+.home-hero__heading .letter {
+  overflow: hidden;
+  position: relative;
+  animation: slideIn 0.6s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
+  transform-origin: bottom;
+}
+
+.home-hero__link {
+  font-size: 2rem;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translate3D(0, 100%, 0) skew(20deg) scale(0);
   }
+}
+
+.test-fade .word {
+  animation: fade 0.3s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
