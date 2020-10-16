@@ -59,16 +59,32 @@ section:not(:last-of-type) {
 }
 
 .features__by-letter {
-  font-size: 10vw;
+  font-size: clamp(40px, 10vw, 120px);
+  cursor: pointer;
+}
+
+.features__by-letter:hover {
+  text-decoration: none;
 }
 
 .features__by-letter .letter {
-  animation: fillBorder 0.2s var(--delay) linear both;
+  animation: fadeAndRotate 0.9s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1)
+    infinite both;
 }
 
-@keyframes fillBorder {
-  from {
-    text-stroke: 1px var(--color-text);
+@keyframes fadeAndRotate {
+  0% {
+    color: transparent;
+  }
+  5% {
+    color: var(--color-text);
+  }
+  70% {
+    color: transparent;
+    transform: rotate3d(2, -1, -1, -0.2turn);
+    perspective: 1000;
+  }
+  100% {
     color: transparent;
   }
 }
