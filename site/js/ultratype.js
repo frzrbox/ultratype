@@ -64,40 +64,43 @@ export function handleSplit(parent, elements, className) {
 
   // Handle ultratype group
   if (parent.closest("[data-ultratype-group")) {
-    const ultratypeGroup = document.querySelector("[data-ultratype-group");
-    const ultratypeGroupChildren = Array.from(ultratypeGroup.children);
+    const ultratypeGroups = document.querySelectorAll("[data-ultratype-group");
 
-    // Loop through all children within the ultratype group
-    ultratypeGroupChildren.forEach((el, i) => {
-      const spansWrapper = el.querySelector('[aria-hidden="true"]');
-      if (spansWrapper) {
-        const elementSpans = spansWrapper.querySelectorAll(`.${className}`);
-
-        elementSpans.forEach((span, j) => {
-          // Pause all animations except for the first
-          if (i !== 0) {
-            span.style.animationPlayState = "paused";
-          }
-
-          if (j === elementSpans.length - 1) {
-            span.addEventListener("animationend", () => {
-              if(i < ultratypeGroupChildren.length - 1){
-                let nextIndex = i + 1;
-                // Need to do this whole thing or won't know what way the next item splits by
-                const nextItemSpans = Array.from(
-                  ultratypeGroupChildren[nextIndex].querySelector(
-                    '[aria-hidden="true"'
-                  ).children
-                );
-                nextItemSpans.forEach((span) => {
-                  span.style.animationPlayState = "running";
-                });
-              }
-            });
-          }
-        });
-      }
-    });
+    ultratypeGroups.forEach(ultratypeGroup => {
+      const ultratypeGroupChildren = Array.from(ultratypeGroup.children);
+  
+      // Loop through all children within the ultratype group
+      ultratypeGroupChildren.forEach((el, i) => {
+        const spansWrapper = el.querySelector('[aria-hidden="true"]');
+        if (spansWrapper) {
+          const elementSpans = spansWrapper.querySelectorAll(`.${className}`);
+  
+          elementSpans.forEach((span, j) => {
+            // Pause all animations except for the first
+            if (i !== 0) {
+              span.style.animationPlayState = "paused";
+            }
+  
+            if (j === elementSpans.length - 1) {
+              span.addEventListener("animationend", () => {
+                if(i < ultratypeGroupChildren.length - 1){
+                  let nextIndex = i + 1;
+                  // Need to do this whole thing or won't know what way the next item splits by
+                  const nextItemSpans = Array.from(
+                    ultratypeGroupChildren[nextIndex].querySelector(
+                      '[aria-hidden="true"'
+                    ).children
+                  );
+                  nextItemSpans.forEach((span) => {
+                    span.style.animationPlayState = "running";
+                  });
+                }
+              });
+            }
+          });
+        }
+      });
+    })
   }
 }
 

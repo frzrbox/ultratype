@@ -1,10 +1,14 @@
-/* Home Hero  */
+section:not(:last-of-type) {
+  padding-bottom: 5vh;
+}
+
+/* Hero  */
 .home-hero__inner {
   position: relative;
 }
 
 .home-hero__heading {
-  font-size: clamp(50px, 10vw, 161px);
+  font-size: clamp(36px, 10vw, 161px);
 }
 
 .home-hero__heading .letter {
@@ -39,4 +43,32 @@
 
 .home-hero__link .letter {
   animation: fade 0.2s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
+}
+
+/* Features  */
+.features {
+  padding: 5vh 0;
+}
+
+.features__heading {
+  font-size: clamp(24px, 3.4vw, 50px);
+}
+
+.features__heading .letter {
+  animation: fade 0.3s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
+}
+
+.features__by-letter {
+  font-size: 10vw;
+}
+
+.features__by-letter .letter {
+  animation: fillBorder 0.2s var(--delay) linear both;
+}
+
+@keyframes fillBorder {
+  from {
+    text-stroke: 1px var(--color-text);
+    color: transparent;
+  }
 }

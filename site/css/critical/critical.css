@@ -79,6 +79,7 @@ a:hover {
 
 .header__site-branding__inner {
   margin: 0;
+  font-size: clamp(18px, 1.5vw, 32px);
 }
 
 .header__site-branding__inner:hover .letter {
