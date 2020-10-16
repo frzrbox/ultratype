@@ -1,6 +1,8 @@
 @import url("https://use.typekit.net/ucw5ixt.css");
 
 :root {
+  --color-black: #2e2e2e;
+  --color-white: #fffffe;
   --color-text: #2e2e2e;
   --color-background: #fffffe;
   --color-headings: #181818;
@@ -8,6 +10,8 @@
   --color-primary: #4fc4cf;
   --color-secondary: #994ff3;
   --color-tertiary: #fbdd74;
+  --font-heading: alverata, serif;
+  --font-body: droid-sans, sans-serif;
 }
 
 /* Global styles  */
@@ -26,14 +30,16 @@ body {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-  font-family: droid-sans, sans-serif;
+  font-family: var(--font-body);
+  background: var(--color-background);
 }
 
 h1,
 h2 {
-  font-family: alverata, serif;
+  font-family: var(--font-heading);
   font-weight: 700;
   font-style: normal;
+  color: var(--color-headings);
 }
 
 a {
@@ -48,6 +54,15 @@ a:hover {
   max-width: 1440px;
   width: 90%;
   margin: 0 auto;
+}
+
+*[data-background="dark"],
+*[data-background="dark"] * {
+  --color-background: var(--color-black);
+  --color-text: var(--color-light-accent);
+
+  background: var(--color-background);
+  color: var(--color-text);
 }
 
 /* Header styles  */
@@ -74,47 +89,25 @@ a:hover {
   margin-right: 20px;
 }
 
-/* Home Hero  */
-.home-hero {
-  padding: 5vh 0;
+@keyframes slide {
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
 }
 
-.home-hero__heading {
-  font-size: clamp(50px, 10vw, 161px);
-}
-
-.home-hero__heading .letter {
-  animation: slideIn 0.6s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
-  transform-origin: bottom;
-}
-
-.home-hero__subheading {
-  font-size: clamp(18px, 2.5vw, 30px);
-  padding: 15px 35px;
-  background: var(--color-text);
-  border-radius: 10px;
-  width: fit-content;
-  animation: fade 0.5s 1s both;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-}
-
-.home-hero__subheading .word {
-  color: var(--color-light-accent);
-  animation: flipUp 0.2s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
-  transform-origin: bottom;
-}
-
-.home-hero__link {
-  display: block;
-  font-size: 2rem;
-  margin: 0.5em 0;
-  width: fit-content;
-}
-
-.home-hero__link .letter {
-  animation: fade 0.2s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
+@keyframes rainbow {
+  0% {
+    color: var(--color-primary);
+  }
+  25% {
+    color: var(--color-primary);
+  }
+  50% {
+    color: var(--color-secondary);
+  }
+  75% {
+    color: var(--color-tertiary);
+  }
 }
 
 @keyframes slideIn {

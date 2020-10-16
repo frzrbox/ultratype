@@ -1,0 +1,42 @@
+/* Home Hero  */
+.home-hero__inner {
+  position: relative;
+}
+
+.home-hero__heading {
+  font-size: clamp(50px, 10vw, 161px);
+}
+
+.home-hero__heading .letter {
+  animation: slideIn 0.6s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
+  transform-origin: bottom;
+}
+
+.home-hero__subheading {
+  font-size: clamp(18px, 2.5vw, 30px);
+  padding: 15px 35px;
+  background: var(--color-text);
+  border-radius: 10px;
+  width: fit-content;
+  animation: fade 0.5s 1s both;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.home-hero__subheading .word {
+  color: var(--color-light-accent);
+  animation: flipUp 0.2s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
+  transform-origin: bottom;
+}
+
+.home-hero__link {
+  display: block;
+  font-size: 2rem;
+  margin: 0.5em 0;
+  width: fit-content;
+}
+
+.home-hero__link .letter {
+  animation: fade 0.2s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
+}

@@ -1,13 +1,19 @@
 {% extends "layouts/base.njk" %}
+{% set pageCriticalStyles = ['critical/home.css'] %}
 {% set pageScripts = ['../../js/script.js'] %}
 
 {% block content %}
     <section class="home-hero">
-        <div class="container">
+        <div class="container home-hero__inner">
             <div class="home-hero__heading-container" data-ultratype-group>
                 <h2 class="home-hero__heading split-by-letter" data-delay="0.03">{{hero.heading}}</h2> 
                 <h3 class="home-hero__subheading split-by-word"  data-delay="0.1">{{hero.subheading}}</h3>
             </div>
+        </div>
+    </section>
+    <section class="features" data-background="dark">
+        <div class="container">
+            <h2 class="split-by-letter" data-initial-delay="4" data-delay="0.1">Features</h2>
         </div>
     </section>
 {% endblock %}
