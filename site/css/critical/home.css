@@ -45,29 +45,29 @@ section:not(:last-of-type) {
   animation: fade 0.2s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
 }
 
-/* Features  */
-.features {
+/* Splitting  */
+.splitting {
   padding: 5vh 0;
 }
 
-.features__heading {
+.splitting__heading {
   font-size: clamp(24px, 3.4vw, 50px);
 }
 
-.features__heading .letter {
+.splitting__heading .letter {
   animation: fade 0.3s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
 }
 
-.features__by-letter {
+.splitting__feature {
   font-size: clamp(40px, 10vw, 120px);
   cursor: pointer;
 }
 
-.features__by-letter:hover {
+.splitting__feature:hover {
   text-decoration: none;
 }
 
-.features__by-letter .letter {
+.splitting__feature .letter {
   animation: fadeAndRotate 0.9s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1)
     infinite both;
 }
