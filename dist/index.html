@@ -35,15 +35,19 @@
   <meta property="og:description" content="Dynamic typography for the web" />
 
     <style>
-        @import url(https://use.typekit.net/ucw5ixt.css);:root{--color-black:#2e2e2e;--color-white:#fffffe;--color-text:#2e2e2e;--color-background:#fffffe;--color-headings:#181818;--color-light-accent:#f2eef5;--color-primary:#4fc4cf;--color-secondary:#994ff3;--color-tertiary:#fbdd74;--font-heading:alverata,serif;--font-body:droid-sans,sans-serif}html{box-sizing:border-box}*,::after,::before{color:var(--color-text)}body{box-sizing:inherit;margin:0;padding:0;font-family:var(--font-body);background:var(--color-background)}h1,h2{font-family:var(--font-heading);font-weight:700;font-style:normal;color:var(--color-headings)}a{text-decoration:none}a:hover{text-decoration:underline}.container{max-width:1440px;width:90%;margin:0 auto}[data-background=dark],[data-background=dark] *{--color-background:var(--color-black);--color-text:var(--color-light-accent);background:var(--color-background);color:var(--color-text)}.header{padding:20px 0}.header__inner{display:flex;align-items:center;justify-content:space-between}.header__site-branding__inner{margin:0;font-size:clamp(18px,1.5vw,32px)}.header__site-branding__inner:hover .letter{animation:pulse .4s var(--delay) linear infinite}.header__navigation__link:not(:last-child){margin-right:20px}@keyframes slide{100%{transform:translate3d(var(--move-final),0,0)}}@keyframes rainbow{0%{color:var(--color-primary)}25%{color:var(--color-primary)}50%{color:var(--color-secondary)}75%{color:var(--color-tertiary)}}@keyframes slideIn{0%{transform:translate3D(0,100%,0) skew(20deg) scale(0);color:var(--color-primary)}33%{color:var(--color-primary)}66%{color:var(--color-secondary)}99%{color:var(--color-tertiary)}}@keyframes fade{from{opacity:0}}@keyframes pulse{0%,100%{transform:rotateX(0)}50%{transform:rotateX(60deg)}}@keyframes flipUp{from{transform:scaleY(0)}}
+        @import url(https://use.typekit.net/ucw5ixt.css);:root{--color-black:#2e2e2e;--color-white:#fffffe;--color-text:#2e2e2e;--color-background:#fffffe;--color-headings:#181818;--color-light-accent:#f2eef5;--color-primary:#4fc4cf;--color-secondary:#994ff3;--color-tertiary:#fbdd74;--font-heading:alverata,serif;--font-body:droid-sans,sans-serif}html{box-sizing:border-box}*,::after,::before{color:var(--color-text)}body{box-sizing:inherit;margin:0;padding:0;font-family:var(--font-body);background:var(--color-background)}h1,h2{font-family:var(--font-heading);font-weight:700;font-style:normal;color:var(--color-headings)}a{text-decoration:none}a:hover{text-decoration:underline}.container{max-width:1440px;width:90%;margin:0 auto}[data-background=dark],[data-background=dark] *{--color-background:var(--color-black);--color-text:var(--color-light-accent);background:var(--color-background);color:var(--color-text)}.text-align-right{text-align:right}.text-align-center{text-align:center}.header{padding:20px 0}.header__inner{display:flex;align-items:center;justify-content:space-between}.header__site-branding__inner{margin:0;font-size:clamp(18px,1.5vw,32px)}.header__site-branding__inner:hover .letter{animation:pulse .4s var(--delay) linear infinite}.header__navigation__link:not(:last-child){margin-right:20px}@keyframes slide{100%{transform:translate3d(var(--move-final),0,0)}}@keyframes rainbow{0%{color:var(--color-primary)}25%{color:var(--color-primary)}50%{color:var(--color-secondary)}75%{color:var(--color-tertiary)}}@keyframes slideIn{0%{transform:translate3D(0,100%,0) skew(20deg) scale(0);color:var(--color-primary)}33%{color:var(--color-primary)}66%{color:var(--color-secondary)}99%{color:var(--color-tertiary)}}@keyframes fade{from{opacity:0}}@keyframes pulse{0%,100%{transform:rotateX(0)}50%{transform:rotateX(60deg)}}@keyframes flipUp{from{transform:scaleY(0)}}
     </style>
     
         
             <style>
-                section:not(:last-of-type){padding-bottom:5vh}.home-hero__inner{position:relative}.home-hero__heading{font-size:clamp(36px,10vw,161px)}.home-hero__heading .letter{animation:slideIn .6s var(--delay) cubic-bezier(.17,.84,.44,1) both;transform-origin:bottom}.home-hero__subheading{font-size:clamp(18px,2.5vw,30px);padding:15px 35px;background:var(--color-text);border-radius:10px;width:fit-content;animation:fade .5s 1s both;font-weight:400;letter-spacing:.05em;cursor:pointer}.home-hero__subheading .word{color:var(--color-light-accent);animation:flipUp .2s var(--delay) cubic-bezier(.17,.84,.44,1) both;transform-origin:bottom}.home-hero__link{display:block;font-size:2rem;margin:.5em 0;width:fit-content}.home-hero__link .letter{animation:fade .2s var(--delay) cubic-bezier(.17,.84,.44,1) both}.splitting{padding:5vh 0}.splitting__heading{font-size:clamp(24px,3.4vw,50px)}.splitting__heading .letter{animation:fade .3s var(--delay) cubic-bezier(.17,.84,.44,1) both}.splitting__feature{font-size:clamp(40px,10vw,120px);cursor:pointer}.splitting__feature:hover{text-decoration:none}.splitting__feature:hover .letter,.splitting__feature:hover .word{--color-start:var(--color-secondary);--color-text:var(--color-tertiary)}.splitting__feature{animation:fade .45s var(--delay) linear both;display:block;width:fit-content;margin:50px 0}.splitting__feature:hover .letter{--color-start:transparent;animation:fadeAndRotate 2.2s var(--delay) cubic-bezier(.68,-.55,.27,1.55) infinite both}.splitting__feature:hover .word{animation:spinSidewards .9s var(--delay) cubic-bezier(.17,.84,.44,1) infinite both}@keyframes fadeAndRotate{70%{transform:rotate3d(2,-1,-1,-2turn);perspective:1000}}@keyframes spinSidewards{20%{transform:rotateY(90deg)}}
+                section:not(:last-of-type){padding-bottom:5vh}.section-heading{font-size:clamp(24px,3.4vw,50px)}.section-heading .letter{animation:fade .3s var(--delay) cubic-bezier(.17,.84,.44,1) both;animation-play-state:paused}.section-heading[data-state=in-view] .letter{animation-play-state:running}.home-hero__inner{position:relative}.home-hero__heading{font-size:clamp(36px,10vw,161px)}.home-hero__heading .letter{animation:slideIn .6s var(--delay) cubic-bezier(.17,.84,.44,1) both;transform-origin:bottom}.home-hero__subheading{font-size:clamp(18px,2.5vw,30px);padding:15px 35px;background:var(--color-text);border-radius:10px;width:fit-content;animation:fade .5s 1s both;font-weight:400;letter-spacing:.05em;cursor:pointer}.home-hero__subheading .word{color:var(--color-light-accent);animation:flipUp .2s var(--delay) cubic-bezier(.17,.84,.44,1) both;transform-origin:bottom}.home-hero__link{display:block;font-size:2rem;margin:.5em 0;width:fit-content}.home-hero__link .letter{animation:fade .2s var(--delay) cubic-bezier(.17,.84,.44,1) both}.splitting{padding:5vh 0}.splitting__feature{font-size:clamp(40px,10vw,120px);cursor:pointer}.splitting__feature:hover{text-decoration:none}.splitting__feature:hover .letter,.splitting__feature:hover .word{--color-start:var(--color-secondary);--color-text:var(--color-tertiary)}.splitting__feature{animation:fade .45s var(--delay) linear both;display:block;width:fit-content;margin:50px 0}.splitting__feature:hover .letter{--color-start:transparent;animation:fadeAndRotate 2.2s var(--delay) cubic-bezier(.68,-.55,.27,1.55) infinite both}.splitting__feature:hover .word{animation:spinSidewards .9s var(--delay) cubic-bezier(.17,.84,.44,1) infinite both}@keyframes fadeAndRotate{70%{transform:rotate3d(2,-1,-1,-2turn);perspective:1000}}@keyframes spinSidewards{20%{transform:rotateY(90deg)}}
             </style>
         
     
+    
+      
+          <link rel="stylesheet" media="print" href="../../css/home.css?bb78-896b-d2a8" onload="this.media='all'"/>
+      
     
   </head>
   <body>
@@ -67,7 +71,7 @@
     </section>
     <section class="splitting" data-background="dark">
         <div class="container splitting-inner">
-            <h2 class="split-by-letter splitting__heading" data-initial-delay="2" data-delay="0.05">Splitting</h2>
+            <h2 data-state="in-view" class="split-by-letter splitting__heading section-heading" data-initial-delay="2" data-delay="0.05">Splitting Features</h2>
             
                 <a style="--delay: 2.7s" href="/docs#split-by-letter" class="splitting__feature split-by-letter" data-delay="0.12">Split by letter</a>
             
@@ -76,14 +80,14 @@
         </div>
     </section>
     <section class="stagger-mode">
-        <div class="container stagger-mode__inner">
-            <h2 class="split-by-letter stagger-mode__inner">Stagger Modes</h2>
+        <div class="container stagger-mode__inner" data-ultratype-group>
+            <h2 class="split-by-letter stagger-mode__inner section-heading text-align-right scroll-element" data-delay="0.05">Stagger Modes</h2>
         </div>
     </section>
 </main>
     
         
-            <script src="../../js/script.js?fb93-e45e-a881"></script>
+            <script src="../../js/script.js?bb78-896b-d2a8"></script>
         
     
   </body>
