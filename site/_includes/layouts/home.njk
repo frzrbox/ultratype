@@ -1,5 +1,6 @@
 {% extends "layouts/base.njk" %}
 {% set pageCriticalStyles = ['critical/home.css'] %}
+{# {% set pageStylesheets = ['../../css/demo.css] %} #}
 {% set pageScripts = ['../../js/script.js'] %}
 
 {% block content %}
@@ -12,12 +13,16 @@
         </div>
     </section>
     <section class="splitting" data-background="dark">
-        <div class="container splitting-inner" data-ultratype-group>
-         
+        <div class="container splitting-inner">
             <h2 class="split-by-letter splitting__heading" data-initial-delay="2" data-delay="0.05">Splitting</h2>
             {% for feature in splitting %}
-                <a href="{{feature.to}}" class="splitting__feature {{feature.class}}" data-delay="0.03">{{feature.content}}</a>
+                <a style="--delay: 2.7s" href="{{feature.to}}" class="splitting__feature {{feature.class}}" data-delay="{{feature.delay}}">{{feature.content}}</a>
             {% endfor %}
+        </div>
+    </section>
+    <section class="stagger-mode">
+        <div class="container stagger-mode__inner">
+            <h2 class="split-by-letter stagger-mode__inner">Stagger Modes</h2>
         </div>
     </section>
 {% endblock %}

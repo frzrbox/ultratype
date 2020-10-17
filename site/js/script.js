@@ -2,7 +2,18 @@ import {splitByLetter, splitByWord} from './ultratype'
 
 const splitLetterElements = document.querySelectorAll('.split-by-letter');
 const splitWordElements = document.querySelectorAll('.split-by-word');
-const clipboardElements = document.querySelectorAll('.clipboard')
+const scrollElements = document.querySelectorAll('.scroll-element');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.map((entry) => {
+        console.log(entry);
+        if (entry.isIntersecting) {
+        entry.target.setAttribute("data-state", "in-view");
+        } else {
+        entry.target.removeAttribute("data-state");
+        }
+    });
+});
 
 splitLetterElements.forEach(el => {
     splitByLetter(el) 
@@ -11,3 +22,8 @@ splitLetterElements.forEach(el => {
 splitWordElements.forEach(el => {
     splitByWord(el)
 })
+
+  scrollElements.forEach(el => {
+      observer.observe(el)
+  })
+

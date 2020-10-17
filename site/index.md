@@ -9,4 +9,9 @@ splitting:
     - class: split-by-letter
       content: Split by letter
       to: /docs#split-by-letter
+      delay: 0.12
+    - class: split-by-word
+      content: Split By Word
+      to: /docs#split-by-word
+      delay: 0.2
 ---
