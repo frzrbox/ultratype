@@ -168,6 +168,12 @@ a:hover {
 	align-items: center;
 }
 
+.footer__branding h2,
+.footer__info p {
+	margin: 0;
+	line-height: 1.5;
+}
+
 .footer__link {
 	display: block;
 }
