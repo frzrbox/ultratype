@@ -1,8 +1,9 @@
 section {
-	padding: 5vh 0;
+	padding: 10vh 0;
 }
 
 .section-heading {
+	margin-top: 0;
 	font-size: clamp(24px, 3.4vw, 50px);
 	font-family: var(--font-body);
 }
