@@ -1,0 +1,12 @@
+{% extends "layouts/base.njk" %}
+{% set pageCriticalStyles = ['critical/docs-critical.css'] %}
+{# {% set pageScripts = ['../../js/script.js'] %} #}
+{# {% set pageStylesheets = ['../../css/docs.css'] %}{% endblock %} #}
+
+{% block content %}
+<div class="container docs">
+    <button class="docs__toggle-nav">Navigate Docs</button>
+    <aside class="docs__navigation">docs links go here</aside>
+    <article class="docs__inner">{{content | safe}}</article>
+</div>
+{% endblock %}
