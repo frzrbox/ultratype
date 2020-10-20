@@ -4,11 +4,13 @@ section {
 
 .section-heading {
 	font-size: clamp(24px, 3.4vw, 50px);
+	font-family: var(--font-body);
 }
 
 .section-heading .letter {
 	animation: fade 0.3s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
 	animation-play-state: paused;
+	--color-text: var(--color-secondary);
 }
 
 .section-heading[data-state='in-view'] .letter {
@@ -16,6 +18,14 @@ section {
 }
 
 /* Hero  */
+.home-hero {
+	padding: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .home-hero__heading {
 	font-size: clamp(36px, 10vw, 161px);
 }
@@ -25,61 +35,30 @@ section {
 	transform-origin: bottom;
 }
 
-/* Splitting  */
-.splitting {
-	padding: 5vh 0;
+/* About */
+.about {
+	padding-bottom: 10vh;
 }
 
-.splitting__heading .letter {
-	--color-text: var(--color-secondary);
+.about__line {
+	font-size: clamp(1.2rem, 4vw, 4rem);
+	margin: 0;
 }
 
-.splitting__feature {
-	font-size: clamp(40px, 10vw, 120px);
-	cursor: pointer;
-}
-
-.splitting__feature:hover {
-	text-decoration: none;
-}
-
-.splitting__feature:hover .letter,
-.splitting__feature:hover .word {
-	--color-text: var(--color-tertiary);
-}
-
-.splitting__feature {
-	display: block;
-	width: fit-content;
-	margin: 50px 0;
-	font-family: var(--font-heading);
-	animation: fade 0.45s linear both;
+.about__line .word {
+	animation: scaleIn 0.6s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
 	animation-play-state: paused;
+	font-family: var(--font-heading);
+	transform-origin: bottom;
 }
 
-.splitting__feature[data-state='in-view'] {
+.about__line-container[data-state='in-view'] .about__line .word {
 	animation-play-state: running;
 }
 
-.splitting__feature:hover .letter {
-	animation: fadeAndRotate 2.2s var(--delay)
-		cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite both;
-}
-
-.splitting__feature:hover .word {
-	animation: spinSidewards 0.9s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1)
-		infinite both;
-}
-
-@keyframes fadeAndRotate {
-	70% {
-		transform: rotate3d(2, -1, -1, -2turn);
-		perspective: 1000;
-	}
-}
-
-@keyframes spinSidewards {
-	20% {
-		transform: rotateY(90deg);
+@keyframes scaleIn {
+	from {
+		opacity: 0;
+		transform: skewX(30deg) translate3d(-10%, 0, 0);
 	}
 }

@@ -5,6 +5,12 @@ metaDesc: Dynamic typography for the web
 hero:
     heading: A mini library for splitting type
     subheading: npm i ultratype
+about:
+  heading: How it works
+  lines:
+    - Ultraype splits the text and generates 
+    - custom properties to use for animation. 
+    - Keep scrolling to see more features.
 splitting:
     heading: Choose How To Split
     content:

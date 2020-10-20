@@ -1,9 +1,61 @@
-.stagger-mode {
-	text-align: right;
+/* Splitting  */
+.splitting {
+	padding: 5vh 0;
 }
 
-.stagger-mode__heading .letter {
-	--color-text: var(--color-secondary);
+.splitting__feature {
+	font-size: clamp(40px, 10vw, 120px);
+	cursor: pointer;
+}
+
+.splitting__feature:hover {
+	text-decoration: none;
+}
+
+.splitting__feature:hover .letter,
+.splitting__feature:hover .word {
+	--color-text: var(--color-tertiary);
+}
+
+.splitting__feature {
+	display: block;
+	width: fit-content;
+	margin: 50px 0;
+	font-family: var(--font-heading);
+	animation: fade 0.45s linear both;
+	animation-play-state: paused;
+}
+
+.splitting__feature[data-state='in-view'] {
+	animation-play-state: running;
+}
+
+.splitting__feature:hover .letter {
+	animation: fadeAndRotate 2.2s var(--delay)
+		cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite both;
+}
+
+.splitting__feature:hover .word {
+	animation: spinSidewards 0.9s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1)
+		infinite both;
+}
+
+@keyframes fadeAndRotate {
+	70% {
+		transform: rotate3d(2, -1, -1, -2turn);
+		perspective: 1000;
+	}
+}
+
+@keyframes spinSidewards {
+	20% {
+		transform: rotateY(90deg);
+	}
+}
+
+/* Stagger Mode  */
+.stagger-mode {
+	text-align: right;
 }
 
 select {
@@ -11,8 +63,6 @@ select {
 	padding: 20px;
 	font-size: 1.2rem;
 	border: 2px solid var(--color-text);
-	color: var(--color-background);
-	background: var(--color-text);
 }
 
 .stagger-mode__label {
@@ -23,17 +73,22 @@ select {
 
 .stagger-mode__select {
 	margin-left: auto;
+	color: var(--color-background);
+	background: var(--color-text);
 }
 
 .stagger-mode__example {
 	display: block;
-	font-size: 8vw;
+	font-size: clamp(2rem, 8vw, 140px);
 	width: fit-content;
 	margin: 50px 0 50px auto;
 }
 
 .stagger-mode__example:hover {
 	text-decoration: none;
+}
+
+.stagger-mode__example:hover .letter {
 	--color-text: var(--color-tertiary);
 }
 

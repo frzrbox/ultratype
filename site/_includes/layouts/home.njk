@@ -13,14 +13,19 @@
     </section>
     <section class="about" data-background="dark">
         <div class="container about__inner">
-            <h2>This is how ultratype works</h2>
+            <h2 class="text-align-center split-by-letter about__heading section-heading scroll-element"  data-delay="0.03">{{about.heading}}</h2>
+            <div data-ultratype-group class="about__line-container scroll-element">
+            {% for line in about.lines %}              
+                <p class="split-by-word about__line text-align-center" data-delay="0.04">{{line}}</p>
+            {% endfor %}
+            </div>
         </div>
     </section>
     <section class="splitting">
         <div class="container splitting-inner">
             <h2  class="split-by-letter scroll-element splitting__heading section-heading"  data-delay="0.05">{{splitting.heading}}</h2>
             {% for feature in splitting.content %}
-                <a  href="{{feature.to}}" class="scroll-element splitting__feature {{feature.class}}" data-delay="{{feature.delay}}">{{feature.content}}</a>
+                <a href="{{feature.to}}" class="scroll-element splitting__feature {{feature.class}}" data-delay="{{feature.delay}}">{{feature.content}}</a>
             {% endfor %}
         </div>
     </section>
