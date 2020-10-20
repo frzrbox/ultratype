@@ -40,13 +40,13 @@
     
         
             <style>
-                section:not(:last-of-type){padding-bottom:5vh}.section-heading{font-size:clamp(24px,3.4vw,50px)}.section-heading .letter{animation:fade .3s var(--delay) cubic-bezier(.17,.84,.44,1) both;animation-play-state:paused}.section-heading[data-state=in-view] .letter{animation-play-state:running}.home-hero__heading{font-size:clamp(36px,10vw,161px)}.home-hero__heading .letter{animation:slideIn .6s var(--delay) cubic-bezier(.17,.84,.44,1) both;transform-origin:bottom}.splitting{padding:5vh 0}.splitting__heading .letter{--color-text:var(--color-secondary)}.splitting__feature{font-size:clamp(40px,10vw,120px);cursor:pointer}.splitting__feature:hover{text-decoration:none}.splitting__feature:hover .letter,.splitting__feature:hover .word{--color-text:var(--color-tertiary)}.splitting__feature{animation:fade .45s var(--delay) linear both;display:block;width:fit-content;margin:50px 0;font-family:var(--font-heading)}.splitting__feature:hover .letter{animation:fadeAndRotate 2.2s var(--delay) cubic-bezier(.68,-.55,.27,1.55) infinite both}.splitting__feature:hover .word{animation:spinSidewards .9s var(--delay) cubic-bezier(.17,.84,.44,1) infinite both}@keyframes fadeAndRotate{70%{transform:rotate3d(2,-1,-1,-2turn);perspective:1000}}@keyframes spinSidewards{20%{transform:rotateY(90deg)}}
+                section{padding:5vh 0}.section-heading{font-size:clamp(24px,3.4vw,50px)}.section-heading .letter{animation:fade .3s var(--delay) cubic-bezier(.17,.84,.44,1) both;animation-play-state:paused}.section-heading[data-state=in-view] .letter{animation-play-state:running}.home-hero__heading{font-size:clamp(36px,10vw,161px)}.home-hero__heading .letter{animation:slideIn .6s var(--delay) cubic-bezier(.17,.84,.44,1) both;transform-origin:bottom}.splitting{padding:5vh 0}.splitting__heading .letter{--color-text:var(--color-secondary)}.splitting__feature{font-size:clamp(40px,10vw,120px);cursor:pointer}.splitting__feature:hover{text-decoration:none}.splitting__feature:hover .letter,.splitting__feature:hover .word{--color-text:var(--color-tertiary)}.splitting__feature{display:block;width:fit-content;margin:50px 0;font-family:var(--font-heading);animation:fade .45s linear both;animation-play-state:paused}.splitting__feature[data-state=in-view]{animation-play-state:running}.splitting__feature:hover .letter{animation:fadeAndRotate 2.2s var(--delay) cubic-bezier(.68,-.55,.27,1.55) infinite both}.splitting__feature:hover .word{animation:spinSidewards .9s var(--delay) cubic-bezier(.17,.84,.44,1) infinite both}@keyframes fadeAndRotate{70%{transform:rotate3d(2,-1,-1,-2turn);perspective:1000}}@keyframes spinSidewards{20%{transform:rotateY(90deg)}}
             </style>
         
     
     
       
-          <link rel="stylesheet" media="print" href="../../css/home.css?ac38-386c-9eb7" onload="this.media='all'"/>
+          <link rel="stylesheet" media="print" href="../../css/home.css?a538-89b8-b4eb" onload="this.media='all'"/>
       
     
   </head>
@@ -68,20 +68,26 @@
             </div>
         </div>
     </section>
-    <section class="splitting" data-background="dark">
+    <section class="about" data-background="dark">
+        <div class="container about__inner">
+            <h2>This is how ultratype works</h2>
+        </div>
+    </section>
+    <section class="splitting">
         <div class="container splitting-inner">
-            <h2 data-state="in-view" class="split-by-letter splitting__heading section-heading" data-initial-delay="2" data-delay="0.05">Choose How To Split</h2>
+            <h2  class="split-by-letter scroll-element splitting__heading section-heading"  data-delay="0.05">Choose How To Split</h2>
             
-                <a style="--delay: 2.7s" href="/docs#split-by-letter" class="splitting__feature split-by-letter" data-delay="0.12">Split by letter</a>
+                <a  href="/docs#split-by-letter" class="scroll-element splitting__feature split-by-letter" data-delay="0.12">Split by letter</a>
             
-                <a style="--delay: 2.7s" href="/docs#split-by-word" class="splitting__feature split-by-word" data-delay="0.2">Split By Word</a>
+                <a  href="/docs#split-by-word" class="scroll-element splitting__feature split-by-word" data-delay="0.2">Split By Word</a>
             
         </div>
     </section>
-    <section class="stagger-mode">
+    <section class="stagger-mode" data-background="dark">
         <div class="container stagger-mode__inner">
             <h2 class="split-by-letter stagger-mode__heading section-heading text-align-right scroll-element" data-delay="0.05">Change The Direction</h2>
             <div class="stagger-mode__content">
+                <label class="stagger-mode__label" for="stagger-modes">Select the stagger direction</label>
                 <select name="stagger-modes" class="stagger-mode__select" id="stagger-modes">
                     <option value="left" selected>Left</option>
                     <option value="right">Right</option>
@@ -91,10 +97,13 @@
             </div>
         </div>
     </section>
+    <section>
+        <button>view docs</button>
+    </section>
 </main>
     
         
-            <script src="../../js/script.js?ac38-386c-9eb7"></script>
+            <script src="../../js/script.js?a538-89b8-b4eb"></script>
         
     
   </body>

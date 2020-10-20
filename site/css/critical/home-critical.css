@@ -1,5 +1,5 @@
-section:not(:last-of-type) {
-	padding-bottom: 5vh;
+section {
+	padding: 5vh 0;
 }
 
 .section-heading {
@@ -49,11 +49,16 @@ section:not(:last-of-type) {
 }
 
 .splitting__feature {
-	animation: fade 0.45s var(--delay) linear both;
 	display: block;
 	width: fit-content;
 	margin: 50px 0;
 	font-family: var(--font-heading);
+	animation: fade 0.45s linear both;
+	animation-play-state: paused;
+}
+
+.splitting__feature[data-state='in-view'] {
+	animation-play-state: running;
 }
 
 .splitting__feature:hover .letter {

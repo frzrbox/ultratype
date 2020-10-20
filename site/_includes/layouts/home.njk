@@ -11,18 +11,24 @@
             </div>
         </div>
     </section>
-    <section class="splitting" data-background="dark">
+    <section class="about" data-background="dark">
+        <div class="container about__inner">
+            <h2>This is how ultratype works</h2>
+        </div>
+    </section>
+    <section class="splitting">
         <div class="container splitting-inner">
-            <h2 data-state="in-view" class="split-by-letter splitting__heading section-heading" data-initial-delay="2" data-delay="0.05">{{splitting.heading}}</h2>
+            <h2  class="split-by-letter scroll-element splitting__heading section-heading"  data-delay="0.05">{{splitting.heading}}</h2>
             {% for feature in splitting.content %}
-                <a style="--delay: 2.7s" href="{{feature.to}}" class="splitting__feature {{feature.class}}" data-delay="{{feature.delay}}">{{feature.content}}</a>
+                <a  href="{{feature.to}}" class="scroll-element splitting__feature {{feature.class}}" data-delay="{{feature.delay}}">{{feature.content}}</a>
             {% endfor %}
         </div>
     </section>
-    <section class="stagger-mode">
+    <section class="stagger-mode" data-background="dark">
         <div class="container stagger-mode__inner">
             <h2 class="split-by-letter stagger-mode__heading section-heading text-align-right scroll-element" data-delay="0.05">{{stagger_modes.heading}}</h2>
             <div class="stagger-mode__content">
+                <label class="stagger-mode__label" for="stagger-modes">Select the stagger direction</label>
                 <select name="stagger-modes" class="stagger-mode__select" id="stagger-modes">
                     <option value="left" selected>Left</option>
                     <option value="right">Right</option>
@@ -31,5 +37,8 @@
                 <a data-stagger-mode="left" data-delay="{{stagger_modes.example.delay}}" class="stagger-mode__example" href="{{stagger_modes.example.to}}">{{stagger_modes.example.content}}</a>
             </div>
         </div>
+    </section>
+    <section>
+        <button>view docs</button>
     </section>
 {% endblock %}
