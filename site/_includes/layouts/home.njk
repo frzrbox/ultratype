@@ -6,9 +6,8 @@
 {% block content %}
     <section class="home-hero">
         <div class="container home-hero__inner">
-            <div class="home-hero__heading-container" data-ultratype-group>
+            <div class="home-hero__heading-container">
                 <h2 class="home-hero__heading split-by-letter" data-delay="0.03">{{hero.heading}}</h2> 
-                <h3 class="home-hero__subheading split-by-word"  data-delay="0.1">{{hero.subheading}}</h3>
             </div>
         </div>
     </section>
@@ -21,8 +20,16 @@
         </div>
     </section>
     <section class="stagger-mode">
-        <div class="container stagger-mode__inner" data-ultratype-group>
-            <h2 class="split-by-letter stagger-mode__inner section-heading text-align-right scroll-element" data-delay="0.05">Stagger Modes</h2>
+        <div class="container stagger-mode__inner">
+            <h2 class="split-by-letter stagger-mode__heading section-heading text-align-right scroll-element" data-delay="0.05">{{stagger_modes.heading}}</h2>
+            <div class="stagger-mode__content">
+                <select name="stagger-modes" class="stagger-mode__select" id="stagger-modes">
+                    <option value="left" selected>Left</option>
+                    <option value="right">Right</option>
+                    <option value="center">Center</option>
+                </select>
+                <a data-stagger-mode="left" data-delay="{{stagger_modes.example.delay}}" class="stagger-mode__example" href="{{stagger_modes.example.to}}">{{stagger_modes.example.content}}</a>
+            </div>
         </div>
     </section>
 {% endblock %}

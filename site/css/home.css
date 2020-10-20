@@ -1,0 +1,39 @@
+.stagger-mode {
+	padding-top: 5vh;
+	text-align: right;
+}
+
+.stagger-mode__heading .letter {
+	--color-text: var(--color-secondary);
+}
+
+select {
+	display: block;
+	padding: 20px;
+	font-size: 1.2rem;
+	border: 2px solid var(--color-text);
+	color: var(--color-background);
+	background: var(--color-text);
+}
+
+.stagger-mode__select {
+	margin-left: auto;
+}
+
+.stagger-mode__example {
+	display: block;
+	font-size: 8vw;
+	width: fit-content;
+	margin: 50px 0 50px auto;
+}
+
+.stagger-mode__example:hover {
+	text-decoration: none;
+	--color-text: var(--color-tertiary);
+}
+
+.stagger-mode__example .letter {
+	animation: pulse 1.4s var(--delay) linear infinite both;
+	transform-origin: bottom;
+	font-family: var(--font-heading);
+}

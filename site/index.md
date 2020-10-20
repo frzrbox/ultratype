@@ -6,7 +6,7 @@ hero:
     heading: A mini library for splitting type
     subheading: npm i ultratype
 splitting:
-    heading: Splitting Features
+    heading: Choose How To Split
     content:
         - class: split-by-letter
           content: Split by letter
@@ -17,5 +17,8 @@ splitting:
           to: /docs#split-by-word
           delay: 0.2
 stagger_modes:
-    heading: Stagger Modes
----
+    heading: Change The Direction
+    example:
+      content: Stagger from
+      to: /docs#stagger-modes
+      delay: 0.09

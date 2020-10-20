@@ -1,108 +1,80 @@
 section:not(:last-of-type) {
-  padding-bottom: 5vh;
+	padding-bottom: 5vh;
 }
 
 .section-heading {
-  font-size: clamp(24px, 3.4vw, 50px);
+	font-size: clamp(24px, 3.4vw, 50px);
 }
 
-.section-heading .letter{
-  animation: fade 0.3s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
-  animation-play-state: paused;
+.section-heading .letter {
+	animation: fade 0.3s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
+	animation-play-state: paused;
 }
 
-.section-heading[data-state=in-view] .letter {
-  animation-play-state: running;
+.section-heading[data-state='in-view'] .letter {
+	animation-play-state: running;
 }
 
 /* Hero  */
-.home-hero__inner {
-  position: relative;
-}
-
 .home-hero__heading {
-  font-size: clamp(36px, 10vw, 161px);
+	font-size: clamp(36px, 10vw, 161px);
 }
 
 .home-hero__heading .letter {
-  animation: slideIn 0.6s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
-  transform-origin: bottom;
-}
-
-.home-hero__subheading {
-  font-size: clamp(18px, 2.5vw, 30px);
-  padding: 15px 35px;
-  background: var(--color-text);
-  border-radius: 10px;
-  width: fit-content;
-  animation: fade 0.5s 1s both;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-}
-
-.home-hero__subheading .word {
-  color: var(--color-light-accent);
-  animation: flipUp 0.2s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
-  transform-origin: bottom;
-}
-
-.home-hero__link {
-  display: block;
-  font-size: 2rem;
-  margin: 0.5em 0;
-  width: fit-content;
-}
-
-.home-hero__link .letter {
-  animation: fade 0.2s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
+	animation: slideIn 0.6s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) both;
+	transform-origin: bottom;
 }
 
 /* Splitting  */
 .splitting {
-  padding: 5vh 0;
+	padding: 5vh 0;
+}
+
+.splitting__heading .letter {
+	--color-text: var(--color-secondary);
 }
 
 .splitting__feature {
-  font-size: clamp(40px, 10vw, 120px);
-  cursor: pointer;
+	font-size: clamp(40px, 10vw, 120px);
+	cursor: pointer;
 }
 
-.splitting__feature:hover{
-  text-decoration: none;
+.splitting__feature:hover {
+	text-decoration: none;
 }
 
 .splitting__feature:hover .letter,
-.splitting__feature:hover .word{
-  --color-start: var(--color-secondary);
-  --color-text: var(--color-tertiary);
+.splitting__feature:hover .word {
+	--color-text: var(--color-tertiary);
 }
 
-.splitting__feature{
-  animation: fade 0.45s var(--delay) linear both;
-  display: block;
-  width: fit-content;
-  margin: 50px 0;
+.splitting__feature {
+	animation: fade 0.45s var(--delay) linear both;
+	display: block;
+	width: fit-content;
+	margin: 50px 0;
+	font-family: var(--font-heading);
 }
 
 .splitting__feature:hover .letter {
-  --color-start: transparent;
-  animation: fadeAndRotate 2.2s var(--delay) cubic-bezier(0.68,-0.55,0.27,1.55) infinite both;
+	animation: fadeAndRotate 2.2s var(--delay)
+		cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite both;
 }
 
-.splitting__feature:hover .word{
-  animation: spinSidewards 0.9s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1) infinite both;
+.splitting__feature:hover .word {
+	animation: spinSidewards 0.9s var(--delay) cubic-bezier(0.17, 0.84, 0.44, 1)
+		infinite both;
 }
 
 @keyframes fadeAndRotate {
-  70% {
-    transform: rotate3d(2, -1, -1, -2turn);
-    perspective: 1000;
-  }
+	70% {
+		transform: rotate3d(2, -1, -1, -2turn);
+		perspective: 1000;
+	}
 }
 
-@keyframes spinSidewards{
-  20%{
-    transform: rotateY(90deg);
-  }
+@keyframes spinSidewards {
+	20% {
+		transform: rotateY(90deg);
+	}
 }

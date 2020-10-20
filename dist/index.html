@@ -40,13 +40,13 @@
     
         
             <style>
-                section:not(:last-of-type){padding-bottom:5vh}.section-heading{font-size:clamp(24px,3.4vw,50px)}.section-heading .letter{animation:fade .3s var(--delay) cubic-bezier(.17,.84,.44,1) both;animation-play-state:paused}.section-heading[data-state=in-view] .letter{animation-play-state:running}.home-hero__inner{position:relative}.home-hero__heading{font-size:clamp(36px,10vw,161px)}.home-hero__heading .letter{animation:slideIn .6s var(--delay) cubic-bezier(.17,.84,.44,1) both;transform-origin:bottom}.home-hero__subheading{font-size:clamp(18px,2.5vw,30px);padding:15px 35px;background:var(--color-text);border-radius:10px;width:fit-content;animation:fade .5s 1s both;font-weight:400;letter-spacing:.05em;cursor:pointer}.home-hero__subheading .word{color:var(--color-light-accent);animation:flipUp .2s var(--delay) cubic-bezier(.17,.84,.44,1) both;transform-origin:bottom}.home-hero__link{display:block;font-size:2rem;margin:.5em 0;width:fit-content}.home-hero__link .letter{animation:fade .2s var(--delay) cubic-bezier(.17,.84,.44,1) both}.splitting{padding:5vh 0}.splitting__feature{font-size:clamp(40px,10vw,120px);cursor:pointer}.splitting__feature:hover{text-decoration:none}.splitting__feature:hover .letter,.splitting__feature:hover .word{--color-start:var(--color-secondary);--color-text:var(--color-tertiary)}.splitting__feature{animation:fade .45s var(--delay) linear both;display:block;width:fit-content;margin:50px 0}.splitting__feature:hover .letter{--color-start:transparent;animation:fadeAndRotate 2.2s var(--delay) cubic-bezier(.68,-.55,.27,1.55) infinite both}.splitting__feature:hover .word{animation:spinSidewards .9s var(--delay) cubic-bezier(.17,.84,.44,1) infinite both}@keyframes fadeAndRotate{70%{transform:rotate3d(2,-1,-1,-2turn);perspective:1000}}@keyframes spinSidewards{20%{transform:rotateY(90deg)}}
+                section:not(:last-of-type){padding-bottom:5vh}.section-heading{font-size:clamp(24px,3.4vw,50px)}.section-heading .letter{animation:fade .3s var(--delay) cubic-bezier(.17,.84,.44,1) both;animation-play-state:paused}.section-heading[data-state=in-view] .letter{animation-play-state:running}.home-hero__heading{font-size:clamp(36px,10vw,161px)}.home-hero__heading .letter{animation:slideIn .6s var(--delay) cubic-bezier(.17,.84,.44,1) both;transform-origin:bottom}.splitting{padding:5vh 0}.splitting__heading .letter{--color-text:var(--color-secondary)}.splitting__feature{font-size:clamp(40px,10vw,120px);cursor:pointer}.splitting__feature:hover{text-decoration:none}.splitting__feature:hover .letter,.splitting__feature:hover .word{--color-text:var(--color-tertiary)}.splitting__feature{animation:fade .45s var(--delay) linear both;display:block;width:fit-content;margin:50px 0;font-family:var(--font-heading)}.splitting__feature:hover .letter{animation:fadeAndRotate 2.2s var(--delay) cubic-bezier(.68,-.55,.27,1.55) infinite both}.splitting__feature:hover .word{animation:spinSidewards .9s var(--delay) cubic-bezier(.17,.84,.44,1) infinite both}@keyframes fadeAndRotate{70%{transform:rotate3d(2,-1,-1,-2turn);perspective:1000}}@keyframes spinSidewards{20%{transform:rotateY(90deg)}}
             </style>
         
     
     
       
-          <link rel="stylesheet" media="print" href="../../css/home.css?17d3-0f51-bbd8" onload="this.media='all'"/>
+          <link rel="stylesheet" media="print" href="../../css/home.css?ac38-386c-9eb7" onload="this.media='all'"/>
       
     
   </head>
@@ -63,15 +63,14 @@
     <main>
     <section class="home-hero">
         <div class="container home-hero__inner">
-            <div class="home-hero__heading-container" data-ultratype-group>
+            <div class="home-hero__heading-container">
                 <h2 class="home-hero__heading split-by-letter" data-delay="0.03">A mini library for splitting type</h2> 
-                <h3 class="home-hero__subheading split-by-word"  data-delay="0.1">npm i ultratype</h3>
             </div>
         </div>
     </section>
     <section class="splitting" data-background="dark">
         <div class="container splitting-inner">
-            <h2 data-state="in-view" class="split-by-letter splitting__heading section-heading" data-initial-delay="2" data-delay="0.05">Splitting Features</h2>
+            <h2 data-state="in-view" class="split-by-letter splitting__heading section-heading" data-initial-delay="2" data-delay="0.05">Choose How To Split</h2>
             
                 <a style="--delay: 2.7s" href="/docs#split-by-letter" class="splitting__feature split-by-letter" data-delay="0.12">Split by letter</a>
             
@@ -80,14 +79,22 @@
         </div>
     </section>
     <section class="stagger-mode">
-        <div class="container stagger-mode__inner" data-ultratype-group>
-            <h2 class="split-by-letter stagger-mode__inner section-heading text-align-right scroll-element" data-delay="0.05">Stagger Modes</h2>
+        <div class="container stagger-mode__inner">
+            <h2 class="split-by-letter stagger-mode__heading section-heading text-align-right scroll-element" data-delay="0.05">Change The Direction</h2>
+            <div class="stagger-mode__content">
+                <select name="stagger-modes" class="stagger-mode__select" id="stagger-modes">
+                    <option value="left" selected>Left</option>
+                    <option value="right">Right</option>
+                    <option value="center">Center</option>
+                </select>
+                <a data-stagger-mode="left" data-delay="0.09" class="stagger-mode__example" href="/docs#stagger-modes">Stagger from</a>
+            </div>
         </div>
     </section>
 </main>
     
         
-            <script src="../../js/script.js?17d3-0f51-bbd8"></script>
+            <script src="../../js/script.js?ac38-386c-9eb7"></script>
         
     
   </body>
