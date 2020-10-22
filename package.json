@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "start": "gulp && concurrently \"gulp watch\" \"npx eleventy --serve\"",
-    "production": "NODE_ENV=production npx gulp && NODE_ENV=production eleventy",
+    "production": "NODE_ENV=production npx gulp && NODE_ENV=production npx eleventy",
     "build": "npx rollup -c"
   },
   "keywords": [
