@@ -37,5 +37,6 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-serve": "^1.0.2",
     "rollup-plugin-terser": "^6.1.0"
-  }
+  },
+  "dependencies": {}
 }
