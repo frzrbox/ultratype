@@ -26,5 +26,5 @@ stagger_modes:
     heading: Change The Direction
     example:
       content: Stagger from
-      to: /docs#stagger-modes
+      to: /docs#options
       delay: 0.09
