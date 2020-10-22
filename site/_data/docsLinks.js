@@ -4,15 +4,15 @@ module.exports = [
 		links: [
 			{
 				name: 'Get Started',
-				to: '/docs#get-started',
+				to: '#get-started',
 			},
 			{
 				name: 'Installation',
-				to: '/docs#installation',
+				to: '#installation',
 			},
 			{
 				name: 'How It Works',
-				to: '/docs#how-it-works',
+				to: '#how-it-works',
 			},
 		],
 	},
@@ -21,19 +21,19 @@ module.exports = [
 		links: [
 			{
 				name: 'Options',
-				to: '/docs#options',
+				to: '#options',
 			},
 			{
 				name: 'Custom Properties',
-				to: '/docs#custom-properties',
+				to: '#custom-properties',
 			},
 			{
 				name: 'Split By Letter',
-				to: '/docs#split-by-letter',
+				to: '#split-by-letter',
 			},
 			{
 				name: 'Split By Word',
-				to: '/docs#split-by-word',
+				to: '#split-by-word',
 			},
 		],
 	},
