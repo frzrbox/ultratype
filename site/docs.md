@@ -176,3 +176,21 @@ splitByWord(splitElement);
     }
 }
 ```
+
+<hr/>
+
+## <a id="ultratype-group">Ultratype Group</a>
+
+By adding __data-ultratype-group__ to the parent of split elements, it will make the elements play in the order that they appear in the markup.
+
+__Note__: At the moment only direct siblings will play in order and the next element won't animation if the sibling before it has an __infinite__ play state.
+
+__Example__
+
+```html
+<div data-ultratype-group>
+    <h2 class="split-by-letter" data-initial-delay="2" data-delay="0.04">First</h2>
+    <h2 class="split-by-letter" data-delay="0.2">Second</h2>
+    <h2 class="split-by-word" data-delay="0.05">Third Option</h2>
+</div>
+```

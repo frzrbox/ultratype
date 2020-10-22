@@ -35,6 +35,10 @@ module.exports = [
 				name: 'Split By Word',
 				to: '#split-by-word',
 			},
+			{
+				name: 'Ultratype Group',
+				to: '#ultratype-group',
+			},
 		],
 	},
 ];
