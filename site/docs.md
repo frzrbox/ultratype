@@ -5,3 +5,7 @@ metaDesc: Dynamic typography for the web
 ---
 
 This is the docs page
+
+```js
+const js = 'this is js'
+```
