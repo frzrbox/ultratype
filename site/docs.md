@@ -21,7 +21,7 @@ npm i ultratype
 
 __UNPKG__
 ```html
-<script src="https://unpkg.com/ultratype@1.0.0/lib/index.js"></script>
+<script src="https://unpkg.com/ultratype@0.1.0/lib/index.js"></script>
 ```
 
 <hr/>
