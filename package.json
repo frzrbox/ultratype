@@ -7,7 +7,7 @@
     "lib"
   ],
   "scripts": {
-    "start": "gulp && concurrently \"gulp watch\" \"eleventy --serve\"",
+    "start": "gulp && concurrently \"gulp watch\" \"npx eleventy --serve\"",
     "production": "NODE_ENV=production npx gulp && NODE_ENV=production eleventy",
     "build": "npx rollup -c"
   },
