@@ -1,3 +1,11 @@
+h2:first-of-type {
+	margin-top: 0;
+}
+
+.docs__inner {
+	min-height: 100vh;
+}
+
 @media (min-width: 1024px) {
 	.docs__toggle-nav {
 		display: none;

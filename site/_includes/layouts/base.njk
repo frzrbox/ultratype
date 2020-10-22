@@ -26,11 +26,12 @@
   <body>
     {% include "partials/header.njk" %}
     <main>{% block content %}{% endblock %}</main>
+    {% include "partials/footer.njk" %}
+    
     {% if pageScripts %}
         {% for item in pageScripts %}
             <script src="{{ item }}?{{ assetHash }}"></script>
         {% endfor %}
     {% endif %}
-    {% include "partials/footer.njk" %}
   </body>
 </html>

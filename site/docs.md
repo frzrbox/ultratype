@@ -4,8 +4,6 @@ title: Documentation
 metaDesc: Dynamic typography for the web
 ---
 
-This is the docs page
+## <a class="docs__heading" id="get-started">Get Started</a>
 
-```js
-const js = 'this is js'
-```
+Ultratype is a lightweight library for creating split text animations. It differs from other animation libraries because it acts only as a splitter of sorts. What this means is that it does no animating own its own, rather it splits the text and gives each element __css custom properties__ that can be referenced in css. One of the main purposes of Ultratype is to leverage the cascade and power of modern css.

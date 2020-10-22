@@ -1,1 +1,1 @@
-@media (min-width:1024px){.docs__toggle-nav{display:none}.docs{display:grid;grid-template-columns:auto 1fr;grid-gap:50px}}
+h2:first-of-type{margin-top:0}.docs__inner{min-height:100vh}@media (min-width:1024px){.docs__toggle-nav{display:none}.docs{display:grid;grid-template-columns:auto 1fr;grid-gap:50px}}

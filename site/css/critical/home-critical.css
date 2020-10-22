@@ -4,6 +4,7 @@ section {
 
 .section-heading {
 	margin-top: 0;
+	margin-bottom: 20px;
 	font-size: clamp(24px, 3.4vw, 50px);
 	font-family: var(--font-body);
 }
