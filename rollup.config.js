@@ -3,8 +3,6 @@ import commonjs from "@rollup/plugin-commonjs";
 import babel from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
 
-import pkg from "./package.json";
-
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
 
 export default {
@@ -14,7 +12,7 @@ export default {
       file: "lib/index.js",
       format: "umd",
       name: "Ultratype",
-    },
+    }
   ],
   plugins: [
     babel({

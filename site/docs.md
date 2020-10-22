@@ -1,6 +1,8 @@
-# Ultratype
-
-[view demo](https://ultratype.netlify.app)
+---
+layout: 'layouts/docs.njk'
+title: Documentation
+metaDesc: Dynamic typography for the web
+---
 
 ## <a id="get-started">Get Started</a>
 

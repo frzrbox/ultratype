@@ -1,0 +1,46 @@
+{% extends "layouts/base.njk" %}
+{% set pageCriticalStyles = ['critical/home-critical.css'] %}
+{% set pageScripts = ['../../js/script.js', '../../js/home.js'] %}
+{% set pageStylesheets = ['../../css/home.css'] %}
+
+{% block content %}
+    <section class="home-hero">
+        <div class="container home-hero__inner">
+            <div class="home-hero__heading-container">
+                <h2 class="home-hero__heading split-by-letter" data-delay="0.03">{{hero.heading}}</h2> 
+            </div>
+        </div>
+    </section>
+    <section class="about" data-background="dark">
+        <div class="container about__inner">
+            <h2 class="text-align-center split-by-letter about__heading section-heading scroll-element"  data-delay="0.03">{{about.heading}}</h2>
+            <div data-ultratype-group class="about__line-container scroll-element">
+            {% for line in about.lines %}              
+                <p class="split-by-word about__line text-align-center" data-delay="0.04">{{line}}</p>
+            {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="splitting">
+        <div class="container splitting-inner">
+            <h2  class="split-by-letter scroll-element splitting__heading section-heading"  data-delay="0.05">{{splitting.heading}}</h2>
+            {% for feature in splitting.content %}
+                <a href="{{feature.to}}" class="scroll-element splitting__feature {{feature.class}}" data-delay="{{feature.delay}}">{{feature.content}}</a>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="stagger-mode" data-background="dark">
+        <div class="container stagger-mode__inner">
+            <h2 class="split-by-letter stagger-mode__heading section-heading text-align-right scroll-element" data-delay="0.05">{{stagger_modes.heading}}</h2>
+            <div class="stagger-mode__content">
+                <label class="stagger-mode__label" for="stagger-modes">Select the stagger direction</label>
+                <select name="stagger-modes" class="stagger-mode__select" id="stagger-modes">
+                    <option value="left" selected>Left</option>
+                    <option value="right">Right</option>
+                    <option value="center">Center</option>
+                </select>
+                <a data-stagger-mode="left" data-delay="{{stagger_modes.example.delay}}" class="stagger-mode__example" href="{{stagger_modes.example.to}}">{{stagger_modes.example.content}}</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
