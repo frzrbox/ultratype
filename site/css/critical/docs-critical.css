@@ -57,6 +57,8 @@ h2:first-of-type {
 pre {
 	--color-text: var(--color-primary);
 	width: fit-content;
+	max-width: 100%;
+	overflow-x: scroll;
 }
 
 @media (min-width: 1024px) {
