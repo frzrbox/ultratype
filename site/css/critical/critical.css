@@ -15,8 +15,6 @@
 	--header-height: 75px;
 }
 
-/* Global styles  */
-
 /* Box sizing rules */
 *,
 *::before,
@@ -86,6 +84,13 @@ button,
 textarea,
 select {
 	font: inherit;
+}
+
+button {
+	background: var(--color-text);
+	color: var(--color-background);
+	border: 0;
+	padding: 15px 30px;
 }
 
 /* Remove all animations and transitions for people that prefer not to see them */

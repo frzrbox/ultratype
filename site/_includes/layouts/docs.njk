@@ -1,12 +1,20 @@
 {% extends "layouts/base.njk" %}
 {% set pageCriticalStyles = ['critical/docs-critical.css'] %}
-{% set pageScripts = ['../../js/script.js', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/prism.min.js'] %}
+{% set pageScripts = ['../../js/script.js', '../../js/docs.js', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/prism.min.js'] %}
 {% set pageStylesheets = ['https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism-okaidia.min.css'] %}
 
 {% block content %}
 <div class="container docs">
-    <button class="docs__toggle-nav">Navigate Docs</button>
-    <aside class="docs__navigation">docs links go here</aside>
+    <button class="docs__open-nav">Navigate Docs</button>
+    <aside class="docs__navigation">
+        <button class="docs__close-nav">Close Docs</button>
+        {% for docsLink in docsLinks %}
+            <h2 class="docs__navigation__category">{{docsLink.name}}</h2>
+            {% for link in docsLink.links %}
+                <a class="docs__navigation__link" href="{{link.to}}">{{link.name}}</a>
+            {% endfor %}
+        {% endfor %}
+    </aside>
     <article class="docs__inner">{{content | safe}}</article>
 </div>
 {% endblock %}
