@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "start": "gulp && concurrently \"gulp watch\" \"npx eleventy --serve\"",
-    "production": "NODE_ENV=production npx gulp && NODE_ENV=production npx eleventy",
+    "production": "NODE_ENV=production npx gulp && NODE_ENV=production eleventy",
     "build": "npx rollup -c"
   },
   "keywords": [
@@ -38,5 +38,7 @@
     "rollup-plugin-serve": "^1.0.2",
     "rollup-plugin-terser": "^6.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.0"
+  }
 }
