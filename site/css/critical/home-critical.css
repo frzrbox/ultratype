@@ -1,5 +1,5 @@
 section {
-	padding: 10vh 0;
+	padding: 15vh 0;
 }
 
 .section-heading {
@@ -21,13 +21,14 @@ section {
 /* Hero  */
 .home-hero {
 	padding: 0;
-	height: 100vh;
+	height: calc(100vh - var(--header-height));
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .home-hero__heading {
+	margin: 0;
 	font-size: clamp(36px, 10vw, 161px);
 }
 
@@ -37,9 +38,6 @@ section {
 }
 
 /* About */
-.about {
-	padding-bottom: 10vh;
-}
 
 .about__line {
 	font-size: clamp(1.2rem, 4vw, 4rem);

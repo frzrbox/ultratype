@@ -12,6 +12,7 @@
 	--color-tertiary: #fbdd74;
 	--font-heading: alverata, serif;
 	--font-body: droid-sans, sans-serif;
+	--header-height: 75px;
 }
 
 /* Global styles  */
@@ -76,7 +77,10 @@ a:hover {
 /* Header styles  */
 
 .header {
-	padding: 20px 0;
+	height: var(--header-height);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .header__inner {

@@ -1,8 +1,4 @@
 /* Splitting  */
-.splitting {
-	padding: 5vh 0;
-}
-
 .splitting__feature {
 	font-size: clamp(40px, 10vw, 120px);
 	cursor: pointer;
