@@ -17,10 +17,7 @@ __NPM__
 npm i ultratype
 ```
 
-__UNPKG__
-```html
-<script src="https://unpkg.com/ultratype@0.1.0/lib/index.js"></script>
-```
+
 
 <hr/>
 
