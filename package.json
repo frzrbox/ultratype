@@ -39,6 +39,6 @@
     "rollup-plugin-terser": "^6.1.0"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.11.0"
+    "@11ty/eleventy": "^1.0.2"
   }
 }
